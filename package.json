@@ -23,7 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node src/index.jsx",
+    "start": "serve -s build",
+    "heroku-postbuild": "npm run build",
     "start web": "export PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
