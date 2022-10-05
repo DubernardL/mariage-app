@@ -1,0 +1,468 @@
+html,
+body,
+#root,
+.mainContainer {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  color: #fce6ed;
+}
+
+li {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+.home-tab {
+  /* margin-right: 100px !important; */
+}
+
+p {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 25px;
+}
+
+label {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  color: black;
+  font-size: 20px;
+}
+
+.home-text-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: linear-gradient(
+    0.9turn,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home-name {
+  font-family: "Great Vibes", cursive;
+  color: #fce6ed;
+  margin: 0px;
+  font-size: 90px;
+  margin-top: 50px;
+  line-height: 50px;
+  font-style: italic;
+}
+
+.home-border-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-border-container {
+  margin: 30px 0px;
+}
+
+.home-border {
+  margin: 0px;
+  height: 4px;
+  width: 150px;
+  border: 1px solid #f5b3c1;
+  border-right: none;
+  border-left: none;
+}
+
+.home-title {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-align: center;
+  color: #fce6ed;
+  margin: 0px;
+  line-height: 100px;
+  font-size: 118px;
+  text-transform: uppercase;
+}
+
+.home-title-small {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  margin-top: 36px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  padding: 50px;
+  width: 60%;
+  max-height: 70vh;
+  margin-bottom: 50px;
+  overflow-y: auto;
+  box-shadow: 0px 0px 8px 8px rgba(51, 50, 50, 0.503);
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.margin-right {
+  padding-left: -50px;
+}
+
+.input-registration {
+  padding-left: -50px;
+}
+
+.infos-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.infos-wraper {
+  display: flex;
+  flex: 1;
+  padding-bottom: 100px;
+  flex-direction: column;
+}
+
+/* hide scrollbar for chrome, safari and opera */
+.infos-container::-webkit-scrollbar {
+  display: none;
+}
+
+.text-side-img {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.text-side {
+  flex: 1;
+  line-height: 30px;
+}
+
+.side-img {
+  width: 35%;
+  border-radius: 50%;
+}
+
+.left-side {
+  margin-right: 50px;
+}
+
+.scrollview {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.informations-screen {
+  display: flex;
+  flex: 1;
+  background-color: #fce6ed;
+}
+
+.tabs-container {
+  padding: 0px 15%;
+}
+
+.infos-tabs-container {
+  display: flex;
+  flex: 1;
+  padding: 0px;
+}
+
+.infos-tabs {
+  display: flex;
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  justify-content: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 45px;
+  font-style: "italic";
+  color: #c32f5d;
+}
+
+input {
+  margin: 8px 4px 8px 4px;
+  padding: 4px 4px 4px 4px;
+}
+
+label {
+  margin-right: 8px;
+}
+
+.invitCard {
+  position: relative;
+  background-color: #ebeef1;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  box-shadow: 3px 3px 10px #dfe3e7;
+}
+
+#trash-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+}
+
+#add-guest-icon {
+  background-color: transparent;
+}
+
+#submit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-btn {
+  padding: 8px;
+  background-color: #282828;
+  border-radius: 10px;
+  border: 4px solid #282828;
+}
+
+.tab-list {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-tabs__tab-list {
+  color: #fce6ed;
+  background-color: transparent;
+  background: linear-gradient(
+    0.9turn,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  margin: 0 0 0 0;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(222, 222, 222, 0.15);
+}
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.react-tabs__tab {
+  font-size: 20px;
+  list-style: none;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.react-tabs__tab--selected {
+  border-bottom: 4px solid white;
+}
+
+/* .react-tabs__tab:focus {
+  outline: none;
+} */
+
+/* .react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+} */
+
+/* .react-tabs__tab-panel {
+  display: none;
+} */
+
+.react-tabs__tab-panel--selected {
+  display: flex;
+  flex: 1;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+table,
+td {
+  border: 1px solid #333;
+  padding: 5px;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+/* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 900px) {
+  p {
+    font-size: 20px;
+  }
+
+  .home-name {
+    font-size: 80px;
+  }
+
+  .home-title {
+    font-size: 100px;
+  }
+
+  .home-title-small {
+    font-size: 40px;
+  }
+
+  .infos-tabs {
+    font-size: 50px;
+  }
+
+  .text-side-img {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-first {
+    flex-direction: column;
+  }
+
+  .side-img {
+    width: 80%;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+
+  .text-side {
+    text-align: center;
+    margin: 0px;
+  }
+
+  .left-side {
+    text-align: center;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  label {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .home-name {
+    font-size: 60px;
+  }
+
+  .home-title {
+    font-size: 80px;
+  }
+
+  .home-title-small {
+    font-size: 30px;
+  }
+
+  .infos-tabs {
+    font-size: 30px;
+    border: none;
+  }
+
+  .react-tabs__tab {
+    font-size: 20px;
+    margin: 0px 10px;
+  }
+
+  .text-side-img {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-first {
+    flex-direction: column;
+  }
+
+  .side-img {
+    width: 100%;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+
+  .text-side {
+    text-align: center;
+    margin: 0px;
+  }
+
+  .left-side {
+    text-align: center;
+  }
+
+  .form-container {
+    margin: 20px 0px;
+  }
+
+  .form {
+    margin-bottom: 50px;
+    padding: 10px;
+    width: 80%;
+    align-items: flex-start;
+  }
+
+  .form-line {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+  }
+}
