@@ -30,19 +30,19 @@ const GuestsList = ({ activeTab }) => {
   }, [dispatch, moreGuest]);
 
   const handleSubmit = (event) => {
-    checkEmail(guest.email).then(() => {
+    dispatch(checkEmail(guest.email)).then(() => {
       if (guest.id) {
-        updateGuest(guest);
+        dispatch(updateGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
-            g.id ? updateGuest(g) : addGuest(g);
+            g.id ? dispatch(updateGuest(g)) : dispatch(addGuest(g));
           });
         }
       } else {
-        addGuest(guest);
+        dispatch(addGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
-            addGuest(g);
+            dispatch(addGuest(g));
           });
         }
       }
@@ -117,7 +117,7 @@ const GuestsList = ({ activeTab }) => {
             onChange={(event) => {
               setGuest({ ...guest, email: event.target.value });
               validateEmail(event.target.value) &&
-                checkEmail(event.target.value).then((res) => {
+                dispatch(checkEmail(event.target.value)).then((res) => {
                   if (res.length > 0) {
                     let guestsFromGuest = [];
                     res.forEach((g) => {
@@ -438,7 +438,7 @@ const GuestsList = ({ activeTab }) => {
                       id="trash-icon"
                       onClick={() => {
                         if (guestAdded.id) {
-                          deleteGuest(guestAdded.id).then(() => {
+                          dispatch(deleteGuest(guestAdded.id)).then(() => {
                             const test = [...moreGuest];
                             test.splice(index, 1);
                             setMoreGuest(test);

@@ -1,13 +1,14 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { getGuestsList, deleteGuest } from "../api/requests";
 
 const GuestsList = () => {
+  const dispatch = useDispatch();
   const [guestsList, setGuestsList] = useState([]);
 
   useEffect(() => {
-    getGuestsList().then((res) => setGuestsList(res));
-  }, []);
+    dispatch(getGuestsList()).then((res) => setGuestsList(res));
+  }, [dispatch]);
 
   return (
     <div>
@@ -67,7 +68,9 @@ const GuestsList = () => {
                   </td>
                   <button
                     onClick={() =>
-                      deleteGuest(guest.id).then((res) => setGuestsList(res))
+                      dispatch(deleteGuest(guest.id)).then((res) =>
+                        setGuestsList(res)
+                      )
                     }
                   >
                     Delete
