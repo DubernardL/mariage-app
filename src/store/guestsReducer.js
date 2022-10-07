@@ -6,6 +6,8 @@ const initialState = {
   nightPreference: "no",
   nights: [],
   meals: [],
+  price: 0,
+  additionalGuests: 0,
 };
 
 const guestsSlice = createSlice({

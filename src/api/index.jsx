@@ -3,8 +3,6 @@ import axios from "axios";
 export const apiMiddleware = () => (next) => async (action) => {
   next(action);
 
-  console.log("action", action);
-
   if (action.type !== "@fetch/API") return;
 
   const { url, method = "GET", data } = action.payload;

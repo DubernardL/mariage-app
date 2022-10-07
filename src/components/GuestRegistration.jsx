@@ -13,6 +13,7 @@ import store from "../store";
 import deleteTrash from "../assets/delete-trash.svg";
 import addGuestIcon from "../assets/add-guest.svg";
 import homeIcon from "../assets/flower-img.svg";
+import { getGuestPrice } from "../helpers/price";
 
 const GuestsList = ({ activeTab }) => {
   const dispatch = useDispatch();
@@ -26,7 +27,29 @@ const GuestsList = ({ activeTab }) => {
   }, [dispatch, guest]);
 
   useEffect(() => {
+    setGuest({
+      ...guest,
+      additionalGuests: moreGuest.length,
+    });
+    // eslint-disable-next-line
+  }, [moreGuest]);
+
+  useEffect(() => {
+    setGuest({
+      ...guest,
+      price: getGuestPrice(guest),
+    });
+    // eslint-disable-next-line
+  }, [
+    guest.nights,
+    guest.meals,
+    guest.nightPreference,
+    guest.additionalGuests,
+  ]);
+
+  useEffect(() => {
     dispatch(replaceGuestsFromGuest(moreGuest));
+    // eslint-disable-next-line
   }, [dispatch, moreGuest]);
 
   const handleSubmit = (event) => {
@@ -35,14 +58,16 @@ const GuestsList = ({ activeTab }) => {
         dispatch(updateGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
-            g.id ? dispatch(updateGuest(g)) : dispatch(addGuest(g));
+            g.id
+              ? dispatch(updateGuest(g))
+              : dispatch(addGuest({ ...g, email: guest.email }));
           });
         }
       } else {
         dispatch(addGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
-            dispatch(addGuest(g));
+            dispatch(addGuest({ ...g, email: guest.email }));
           });
         }
       }
@@ -121,13 +146,13 @@ const GuestsList = ({ activeTab }) => {
                   if (res.length > 0) {
                     let guestsFromGuest = [];
                     res.forEach((g) => {
-                      g.email ? setGuest(g) : guestsFromGuest.push(g);
+                      g.fromEmailGuest ? guestsFromGuest.push(g) : setGuest(g);
                     });
                     setMoreGuest(guestsFromGuest);
                   } else {
                     setGuest({
                       email: event.target.value,
-                      // isPresent: true,
+                      price: 0,
                       isChild: false,
                       nights: [],
                       meals: [],
@@ -476,6 +501,56 @@ const GuestsList = ({ activeTab }) => {
                 </button>
               </div>
             )}
+
+            {guest.isPresent && (
+              <div>
+                <p>Préstations :</p>
+                <p>
+                  Vous serez{" "}
+                  {guest.additionalGuests ? guest.additionalGuests + 1 : 1}{" "}
+                  invité{guest.additionalGuests + 1 > 1 && "s"}.
+                </p>
+                <div className="row">
+                  <p>Nuits : </p>
+                  {guest.nights.length !== 0 ? (
+                    guest.nights.map((n, i) => (
+                      <p>
+                        {n}
+                        {i !== guest.nights.length - 1 ? "," : "."}
+                      </p>
+                    ))
+                  ) : (
+                    <p> Pas de nuit supplémentaire.</p>
+                  )}
+                </div>
+                <div className="row">
+                  <p>Repas : </p>
+                  {guest.meals.length !== 0 ? (
+                    guest.meals.map((m, i) => (
+                      <p>
+                        {m}
+                        {i !== guest.meals.length - 1 ? "," : "."}
+                      </p>
+                    ))
+                  ) : (
+                    <p>Pas de repas supplémentaire.</p>
+                  )}
+                </div>
+
+                {guest.meals.length !== 0 ||
+                  (guest.nights.length !== 0 && (
+                    <p>
+                      Prix :{" "}
+                      {guest?.price /
+                        (guest.additionalGuests
+                          ? guest.additionalGuests + 1
+                          : 1)}{" "}
+                      €/personne, soit {guest?.price} € au total
+                    </p>
+                  ))}
+              </div>
+            )}
+
             {submitBtnDisplay() && (
               <div id="submit-btn-container">
                 <button id="submit-btn" type="submit">
