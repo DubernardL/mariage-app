@@ -26,21 +26,21 @@ const Informations = () => {
             className="infos-tabs"
             style={activeTab === 0 ? { textDecoration: "underline" } : {}}
           >
-            Le lieu
+            Lieu
           </Tab>
           <Tab
             className="infos-tabs"
             style={activeTab === 1 ? { textDecoration: "underline" } : {}}
             tabIndex={"2"}
           >
-            Les nuitées
+            Nuitées
           </Tab>
           <Tab
             className="infos-tabs"
             style={activeTab === 2 ? { textDecoration: "underline" } : {}}
             tabIndex={"3"}
           >
-            Les repas
+            Repas
           </Tab>
         </TabList>
 

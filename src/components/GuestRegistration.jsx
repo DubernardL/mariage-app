@@ -134,329 +134,368 @@ const GuestsList = ({ activeTab }) => {
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
-        <div className="form-line">
-          <label>Email</label>
-          <input
-            type="text"
-            value={guest.email || ""}
-            onChange={(event) => {
-              setGuest({ ...guest, email: event.target.value });
-              validateEmail(event.target.value) &&
-                dispatch(checkEmail(event.target.value)).then((res) => {
-                  if (res.length > 0) {
-                    let guestsFromGuest = [];
-                    res.forEach((g) => {
-                      g.fromEmailGuest ? guestsFromGuest.push(g) : setGuest(g);
-                    });
-                    setMoreGuest(guestsFromGuest);
-                  } else {
-                    setGuest({
-                      email: event.target.value,
-                      price: 0,
-                      isChild: false,
-                      nights: [],
-                      meals: [],
-                    });
-                    setMoreGuest([]);
-                  }
-                });
-            }}
-          />
-        </div>
-        {validateEmail(guest.email) && (
-          <div>
-            <div className="form-line">
-              <label>Prénom</label>
-              <input
-                type="text"
-                value={guest.firstName || ""}
-                onChange={(event) =>
-                  setGuest({ ...guest, firstName: event.target.value })
-                }
-              />
-            </div>
-            <div className="form-line">
-              <label>Nom</label>
-              <input
-                type="text"
-                value={guest.lastName || ""}
-                onChange={(event) =>
-                  setGuest({ ...guest, lastName: event.target.value })
-                }
-              />
-            </div>
-          </div>
-        )}
-        {guest.firstName && guest.lastName && (
-          <div style={{ display: "flex", flex: 1, flexDirection: "column" }}>
-            <div className="form-line">
-              <label>Présence</label>
-              <div>
-                <p>
-                  <input
-                    type="radio"
-                    value={"yes"}
-                    checked={guest.isPresent}
-                    onChange={handleChangeRadio}
-                  />
-                  Oui
-                </p>
-                <p>
-                  <input
-                    type="radio"
-                    value={"no"}
-                    checked={
-                      typeof guest.isPresent === "boolean"
-                        ? !guest.isPresent
-                        : false
-                    }
-                    onChange={handleChangeRadio}
-                  />
-                  Non
-                </p>
-              </div>
-            </div>
-            {guest.isPresent && (
-              <div>
-                <div className="form-line">
-                  <label>Nuits</label>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Vendredi"
-                      checked={guest.nights.includes("Vendredi")}
-                      onChange={(v) => handleNightsChange(v)}
-                    />
-                    Vendredi
-                  </p>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Samedi"
-                      checked={guest.nights.includes("Samedi")}
-                      onChange={(v) => handleNightsChange(v)}
-                    />
-                    Samedi
-                  </p>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Dimanche"
-                      checked={guest.nights.includes("Dimanche")}
-                      onChange={(v) => handleNightsChange(v)}
-                    />
-                    Dimanche
-                  </p>
-                </div>
-                <div className="form-line">
-                  <label>Préférence pour la/les nuits</label>
-                  <p>
-                    <input
-                      type="radio"
-                      value={"gîte"}
-                      checked={guest.nightPreference === "gîte"}
-                      onChange={(e) => handleChangeRadio(e, true)}
-                    />
-                    Gîte (chambre)
-                  </p>
-                  <p>
-                    <input
-                      type="radio"
-                      value={"dortoir"}
-                      checked={guest.nightPreference === "dortoir"}
-                      onChange={(e) => handleChangeRadio(e, true)}
-                    />
-                    Dortoir
-                  </p>
-                  <p>
-                    <input
-                      type="radio"
-                      value={"no"}
-                      checked={guest.nightPreference === "no"}
-                      onChange={(e) => handleChangeRadio(e, true)}
-                    />
-                    Pas de préférences
-                  </p>
-                </div>
-                <div className="form-line">
-                  <label>Repas</label>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Vendredi soir"
-                      checked={guest.meals.includes("Vendredi soir")}
-                      onChange={(v) => handleMealsChange(v)}
-                    />
-                    Vendredi soir
-                  </p>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Samedi midi"
-                      checked={guest.meals.includes("Samedi midi")}
-                      onChange={(v) => handleMealsChange(v)}
-                    />
-                    Samedi midi
-                  </p>
-                  <p>
-                    <input
-                      type="checkbox"
-                      name="Dimanche soir"
-                      checked={guest.meals.includes("Dimanche soir")}
-                      onChange={(v) => handleMealsChange(v)}
-                    />
-                    Dimanche soir
-                  </p>
-                </div>
-                <div className="form-line">
-                  <label>Allergies</label>
-                  <textarea
-                    type="text"
-                    value={guest.allergies || ""}
-                    onChange={(event) =>
-                      setGuest({ ...guest, allergies: event.target.value })
-                    }
-                  />
-                </div>
-                <div className="form-line">
-                  <label>Régime</label>
-                  <textarea
-                    type="text"
-                    value={guest.diets || ""}
-                    onChange={(event) =>
-                      setGuest({ ...guest, diets: event.target.value })
-                    }
-                  />
-                </div>
-              </div>
-            )}
-            {moreGuest.map((guestAdded, index) => {
-              return (
-                <div>
-                  <div className="home-border-container">
-                    <div className="home-border" />
-                    <img
-                      style={{ width: 60, height: 60 }}
-                      src={homeIcon}
-                      alt="home-icon"
-                    />
-                    <div className="home-border" />
-                  </div>
-                  <div className="invitCard" key={index}>
-                    <div className="form-line">
-                      <label>Prénom</label>
-                      <input
-                        type="text"
-                        value={moreGuest[index].firstName || ""}
-                        onChange={(event) => {
-                          const newGuest = {
-                            ...moreGuest[index],
-                            from_email_guest: guest.email,
-                            isPresent: true,
+        <table className="form-table">
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input
+                  type="text"
+                  value={guest.email || ""}
+                  onChange={(event) => {
+                    setGuest({ ...guest, email: event.target.value });
+                    validateEmail(event.target.value) &&
+                      dispatch(checkEmail(event.target.value)).then((res) => {
+                        if (res.length > 0) {
+                          let guestsFromGuest = [];
+                          res.forEach((g) => {
+                            g.fromEmailGuest
+                              ? guestsFromGuest.push(g)
+                              : setGuest(g);
+                          });
+                          setMoreGuest(guestsFromGuest);
+                        } else {
+                          setGuest({
+                            email: event.target.value,
+                            price: 0,
                             isChild: false,
-                            firstName: event.target.value,
-                          };
-                          let newMoreGuest = [...moreGuest];
-                          newMoreGuest[index] = newGuest;
-                          setMoreGuest(newMoreGuest);
-                        }}
-                      />
-                      <label>Nom</label>
+                            nights: [],
+                            meals: [],
+                          });
+                          setMoreGuest([]);
+                        }
+                      });
+                  }}
+                />
+              </td>
+            </tr>
+            {validateEmail(guest.email) && (
+              <>
+                <tr>
+                  <td>Prénom</td>
+                  <td>
+                    <input
+                      type="text"
+                      value={guest.firstName || ""}
+                      onChange={(event) =>
+                        setGuest({ ...guest, firstName: event.target.value })
+                      }
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nom</td>
+                  <td>
+                    <input
+                      type="text"
+                      value={guest.lastName || ""}
+                      onChange={(event) =>
+                        setGuest({ ...guest, lastName: event.target.value })
+                      }
+                    />
+                  </td>
+                </tr>
+              </>
+            )}
+            {guest.firstName && guest.lastName && (
+              <>
+                <tr>
+                  <td>Présence</td>
+                  <td>
+                    <p>
                       <input
-                        type="text"
-                        value={moreGuest[index].lastName || ""}
-                        onChange={(event) => {
-                          const newGuest = {
-                            ...moreGuest[index],
-                            lastName: event.target.value,
-                          };
-                          let newMoreGuest = [...moreGuest];
-                          newMoreGuest[index] = newGuest;
-                          setMoreGuest(newMoreGuest);
-                        }}
+                        type="radio"
+                        value={"yes"}
+                        checked={guest.isPresent}
+                        onChange={handleChangeRadio}
                       />
-                    </div>
+                      Oui
+                    </p>
+                    <p>
+                      <input
+                        type="radio"
+                        value={"no"}
+                        checked={
+                          typeof guest.isPresent === "boolean"
+                            ? !guest.isPresent
+                            : false
+                        }
+                        onChange={handleChangeRadio}
+                      />
+                      Non
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nuits</td>
+                  <td>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Vendredi"
+                        checked={guest.nights.includes("Vendredi")}
+                        onChange={(v) => handleNightsChange(v)}
+                      />
+                      Vendredi
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Samedi"
+                        checked={guest.nights.includes("Samedi")}
+                        onChange={(v) => handleNightsChange(v)}
+                      />
+                      Samedi
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Dimanche"
+                        checked={guest.nights.includes("Dimanche")}
+                        onChange={(v) => handleNightsChange(v)}
+                      />
+                      Dimanche
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Préférence pour la/les nuits</td>
+                  <td>
+                    <p>
+                      <input
+                        type="radio"
+                        value={"gîte"}
+                        checked={guest.nightPreference === "gîte"}
+                        onChange={(e) => handleChangeRadio(e, true)}
+                      />
+                      Gîte (chambre)
+                    </p>
+                    <p>
+                      <input
+                        type="radio"
+                        value={"dortoir"}
+                        checked={guest.nightPreference === "dortoir"}
+                        onChange={(e) => handleChangeRadio(e, true)}
+                      />
+                      Dortoir
+                    </p>
+                    <p>
+                      <input
+                        type="radio"
+                        value={"no"}
+                        checked={guest.nightPreference === "no"}
+                        onChange={(e) => handleChangeRadio(e, true)}
+                      />
+                      Pas de préférences
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Repas</td>
+                  <td>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Vendredi soir"
+                        checked={guest.meals.includes("Vendredi soir")}
+                        onChange={(v) => handleMealsChange(v)}
+                      />
+                      Vendredi soir
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Samedi midi"
+                        checked={guest.meals.includes("Samedi midi")}
+                        onChange={(v) => handleMealsChange(v)}
+                      />
+                      Samedi midi
+                    </p>
+                    <p>
+                      <input
+                        type="checkbox"
+                        name="Dimanche soir"
+                        checked={guest.meals.includes("Dimanche soir")}
+                        onChange={(v) => handleMealsChange(v)}
+                      />
+                      Dimanche soir
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Allergies</td>
+                  <td>
+                    <textarea
+                      type="text"
+                      style={{ maxWidth: 250, maxHeight: 120 }}
+                      value={guest.allergies || ""}
+                      onChange={(event) =>
+                        setGuest({ ...guest, allergies: event.target.value })
+                      }
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Régime</td>
+                  <td>
+                    <textarea
+                      type="text"
+                      style={{ maxWidth: 250, maxHeight: 120 }}
+                      value={guest.diets || ""}
+                      onChange={(event) =>
+                        setGuest({ ...guest, diets: event.target.value })
+                      }
+                    />
+                  </td>
+                </tr>
+              </>
+            )}
+          </tbody>
+        </table>
+
+        {moreGuest.map((guestAdded, index) => {
+          return (
+            <div className="invit-card-container">
+              <div className="home-border-container">
+                <div className="home-border" />
+                <img
+                  style={{ width: 60, height: 60 }}
+                  src={homeIcon}
+                  alt="home-icon"
+                />
+                <div className="home-border" />
+              </div>
+              <div className="invit-card" key={index}>
+                <div className="form-line">
+                  <label>Prénom</label>
+                  <input
+                    type="text"
+                    value={moreGuest[index].firstName || ""}
+                    onChange={(event) => {
+                      const newGuest = {
+                        ...moreGuest[index],
+                        from_email_guest: guest.email,
+                        isPresent: true,
+                        isChild: false,
+                        firstName: event.target.value,
+                      };
+                      let newMoreGuest = [...moreGuest];
+                      newMoreGuest[index] = newGuest;
+                      setMoreGuest(newMoreGuest);
+                    }}
+                  />
+                  <label>Nom</label>
+                  <input
+                    type="text"
+                    value={moreGuest[index].lastName || ""}
+                    onChange={(event) => {
+                      const newGuest = {
+                        ...moreGuest[index],
+                        lastName: event.target.value,
+                      };
+                      let newMoreGuest = [...moreGuest];
+                      newMoreGuest[index] = newGuest;
+                      setMoreGuest(newMoreGuest);
+                    }}
+                  />
+                </div>
+                <table className="form-table">
+                  <tbody>
                     {moreGuest[index].firstName && moreGuest[index].lastName && (
-                      <div className="form-line">
-                        <label>Présence</label>
-                        <input
-                          type="radio"
-                          value={"yes"}
-                          checked={moreGuest[index].isPresent}
-                          onChange={(e) => handleChangeRadioMoreGuest(e, index)}
-                        />
-                        Oui
-                        <input
-                          type="radio"
-                          value={"no"}
-                          checked={
-                            moreGuest[index].isPresent
-                              ? !moreGuest[index].isPresent
-                              : false
-                          }
-                          onChange={(e) => handleChangeRadioMoreGuest(e, index)}
-                        />
-                        Non
-                      </div>
+                      <tr>
+                        <td>Présence</td>
+                        <td>
+                          <input
+                            type="radio"
+                            value={"yes"}
+                            checked={moreGuest[index].isPresent}
+                            onChange={(e) =>
+                              handleChangeRadioMoreGuest(e, index)
+                            }
+                          />
+                          Oui
+                          <input
+                            type="radio"
+                            value={"no"}
+                            checked={
+                              moreGuest[index].isPresent
+                                ? !moreGuest[index].isPresent
+                                : false
+                            }
+                            onChange={(e) =>
+                              handleChangeRadioMoreGuest(e, index)
+                            }
+                          />
+                          Non
+                        </td>
+                      </tr>
                     )}
                     {moreGuest[index].firstName &&
                       moreGuest[index].lastName &&
                       moreGuest[index].isPresent && (
-                        <div>
-                          <div className="form-line">
-                            <label>Enfant</label>
-                            <input
-                              type="radio"
-                              value={"yes"}
-                              checked={moreGuest[index].isChild}
-                              onChange={(e) =>
-                                handleChangeRadioMoreGuest(e, index, true)
-                              }
-                            />
-                            Oui
-                            <input
-                              type="radio"
-                              value={"no"}
-                              checked={!moreGuest[index].isChild}
-                              onChange={(e) =>
-                                handleChangeRadioMoreGuest(e, index, true)
-                              }
-                            />
-                            Non
-                          </div>
-                          <div className="form-line">
-                            <label>Allergies</label>
-                            <textarea
-                              type="text"
-                              value={moreGuest[index].allergies || ""}
-                              onChange={(event) => {
-                                const newGuest = {
-                                  ...moreGuest[index],
-                                  allergies: event.target.value,
-                                };
-                                let newMoreGuest = [...moreGuest];
-                                newMoreGuest[index] = newGuest;
-                                setMoreGuest(newMoreGuest);
-                              }}
-                            />
-                          </div>
-                          <div className="form-line">
-                            <label>Régime</label>
-                            <textarea
-                              type="text"
-                              value={moreGuest[index].diets || ""}
-                              onChange={(event) => {
-                                const newGuest = {
-                                  ...moreGuest[index],
-                                  diets: event.target.value,
-                                };
-                                let newMoreGuest = [...moreGuest];
-                                newMoreGuest[index] = newGuest;
-                                setMoreGuest(newMoreGuest);
-                              }}
-                            />
-                          </div>
-                        </div>
+                        <>
+                          <tr>
+                            <td>Enfant</td>
+                            <td>
+                              <input
+                                type="radio"
+                                value={"yes"}
+                                checked={moreGuest[index].isChild}
+                                onChange={(e) =>
+                                  handleChangeRadioMoreGuest(e, index, true)
+                                }
+                              />
+                              Oui
+                              <input
+                                type="radio"
+                                value={"no"}
+                                checked={!moreGuest[index].isChild}
+                                onChange={(e) =>
+                                  handleChangeRadioMoreGuest(e, index, true)
+                                }
+                              />
+                              Non
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Allergies</td>
+                            <td>
+                              <textarea
+                                type="text"
+                                style={{ maxWidth: 250, maxHeight: 120 }}
+                                value={moreGuest[index].allergies || ""}
+                                onChange={(event) => {
+                                  const newGuest = {
+                                    ...moreGuest[index],
+                                    allergies: event.target.value,
+                                  };
+                                  let newMoreGuest = [...moreGuest];
+                                  newMoreGuest[index] = newGuest;
+                                  setMoreGuest(newMoreGuest);
+                                }}
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Régime</td>
+                            <td>
+                              <textarea
+                                type="text"
+                                style={{ maxWidth: 250, maxHeight: 120 }}
+                                value={moreGuest[index].diets || ""}
+                                onChange={(event) => {
+                                  const newGuest = {
+                                    ...moreGuest[index],
+                                    diets: event.target.value,
+                                  };
+                                  let newMoreGuest = [...moreGuest];
+                                  newMoreGuest[index] = newGuest;
+                                  setMoreGuest(newMoreGuest);
+                                }}
+                              />
+                            </td>
+                          </tr>
+                        </>
                       )}
                     <button
                       type="button"
@@ -476,88 +515,110 @@ const GuestsList = ({ activeTab }) => {
                       }}
                     >
                       <img
-                        style={{ width: 25, height: 25 }}
+                        style={{ width: 20, height: 20 }}
                         src={deleteTrash}
                         alt="trash-icon"
                       />
                     </button>
-                  </div>
-                </div>
-              );
-            })}
-            {submitBtnDisplay() && guest.isPresent && (
-              <div>
-                <button
-                  type="button"
-                  id="add-guest-icon"
-                  onClick={() => setMoreGuest([...moreGuest, {}])}
-                >
-                  <img
-                    style={{ width: 25, height: 25 }}
-                    src={addGuestIcon}
-                    alt="add-guest-icon"
-                  />
-                  Ajouter un invité
-                </button>
+                  </tbody>
+                </table>
               </div>
-            )}
+            </div>
+          );
+        })}
 
-            {guest.isPresent && (
-              <div>
-                <p>Préstations :</p>
+        {submitBtnDisplay() && guest.isPresent && (
+          <div>
+            <button
+              type="button"
+              id="add-guest-icon"
+              onClick={() => setMoreGuest([...moreGuest, {}])}
+            >
+              <img
+                style={{ width: 25, height: 25 }}
+                src={addGuestIcon}
+                alt="add-guest-icon"
+              />
+              Ajouter un invité
+            </button>
+          </div>
+        )}
+
+        {guest.isPresent && (
+          <div className="presta-table">
+            <h2>Résumé des préstations sélectionnées:</h2>
+            <table>
+              <tbody>
                 <p>
                   Vous serez{" "}
                   {guest.additionalGuests ? guest.additionalGuests + 1 : 1}{" "}
-                  invité{guest.additionalGuests + 1 > 1 && "s"}.
+                  invité
+                  {guest.additionalGuests + 1 > 1 && "s"}.
                 </p>
-                <div className="row">
-                  <p>Nuits : </p>
-                  {guest.nights.length !== 0 ? (
-                    guest.nights.map((n, i) => (
+                <tr>
+                  <td>
+                    <h3 className="presta-title">Nuits : </h3>
+                  </td>
+                  <td>
+                    {guest.nights.length !== 0 ? (
                       <p>
-                        {n}
-                        {i !== guest.nights.length - 1 ? "," : "."}
+                        {guest.nights.map((n, i) => (
+                          <span>
+                            {`${n}${
+                              i !== guest.nights.length - 1 ? ", " : "."
+                            }`}
+                          </span>
+                        ))}
                       </p>
-                    ))
-                  ) : (
-                    <p> Pas de nuit supplémentaire.</p>
-                  )}
-                </div>
-                <div className="row">
-                  <p>Repas : </p>
-                  {guest.meals.length !== 0 ? (
-                    guest.meals.map((m, i) => (
+                    ) : (
+                      <p>Pas de nuit supplémentaire.</p>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3 className="presta-title">Repas :</h3>
+                  </td>
+                  <td>
+                    {guest.meals.length !== 0 ? (
                       <p>
-                        {m}
-                        {i !== guest.meals.length - 1 ? "," : "."}
+                        {guest.meals.map((m, i) => (
+                          <span>
+                            {`${m}${i !== guest.meals.length - 1 ? ", " : "."}`}
+                          </span>
+                        ))}
                       </p>
-                    ))
-                  ) : (
-                    <p>Pas de repas supplémentaire.</p>
-                  )}
-                </div>
+                    ) : (
+                      <p>Pas de repas supplémentaire.</p>
+                    )}
+                  </td>
+                </tr>
 
-                {guest.meals.length !== 0 ||
-                  (guest.nights.length !== 0 && (
-                    <p>
-                      Prix :{" "}
-                      {guest?.price /
-                        (guest.additionalGuests
-                          ? guest.additionalGuests + 1
-                          : 1)}{" "}
-                      €/personne, soit {guest?.price} € au total
-                    </p>
-                  ))}
-              </div>
-            )}
-
-            {submitBtnDisplay() && (
-              <div id="submit-btn-container">
-                <button id="submit-btn" type="submit">
-                  Enregistrer mes infos
-                </button>
-              </div>
-            )}
+                {(guest.meals.length !== 0 || guest.nights.length !== 0) && (
+                  <tr>
+                    <td>
+                      <h3 className="presta-title">Prix :</h3>
+                    </td>
+                    <td>
+                      <p>
+                        {guest?.price /
+                          (guest.additionalGuests
+                            ? guest.additionalGuests + 1
+                            : 1)}{" "}
+                        € /personne, soit {guest?.price} € au total
+                      </p>
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {submitBtnDisplay() && (
+          <div id="submit-btn-container">
+            <button id="submit-btn" type="submit">
+              Enregistrer mes infos
+            </button>
           </div>
         )}
       </form>
