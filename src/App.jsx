@@ -26,29 +26,27 @@ const App = () => {
         }}
         selectedIndex={activeTab}
       >
-        <div className="sticky">
-          <TabList>
-            <img
-              style={{ width: 50, height: 50 }}
-              src={homeIcon}
-              alt="home-icon"
-            />
-            <Tab className={"home-tab react-tabs__tab"} tabIndex={"0"}>
-              Accueil
+        <TabList>
+          <img
+            style={{ width: 50, height: 50 }}
+            src={homeIcon}
+            alt="home-icon"
+          />
+          <Tab className={"home-tab react-tabs__tab"} tabIndex={"0"}>
+            Accueil
+          </Tab>
+          <div className="tab-list">
+            <Tab className={"react-tabs__tab"} tabIndex={"1"}>
+              Informations
             </Tab>
-            <div className="tab-list">
-              <Tab className={"react-tabs__tab"} tabIndex={"1"}>
-                Infos sur le mariage
-              </Tab>
-              <Tab className={"react-tabs__tab"} tabIndex={"2"}>
-                Répondre à l'invitation
-              </Tab>
-              <Tab className={"react-tabs__tab"} tabIndex={"3"}>
-                Liste des invités
-              </Tab>
-            </div>
-          </TabList>
-        </div>
+            <Tab className={"react-tabs__tab"} tabIndex={"2"}>
+              Répondre à l'invitation
+            </Tab>
+            <Tab className={"react-tabs__tab"} tabIndex={"3"}>
+              Liste des invités
+            </Tab>
+          </div>
+        </TabList>
 
         <TabPanel>
           <Home />
