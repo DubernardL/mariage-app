@@ -32,7 +32,8 @@ li {
 
 p {
   font-family: "Yanone Kaffeesatz", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
+  margin: 0;
 }
 
 label {
@@ -110,7 +111,7 @@ label {
 .form {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #fce6ed;
   border-radius: 16px;
   padding: 50px;
   width: 60%;
@@ -254,9 +255,10 @@ label {
 
 #submit-btn {
   padding: 8px;
-  background-color: #282828;
+  background-color: #c32f5d;
   border-radius: 10px;
-  border: 4px solid #282828;
+  border: 4px solid #c32f5d;
+  color: white;
 }
 
 .tab-list {
@@ -317,6 +319,14 @@ label {
   display: none;
 } */
 
+.guests-list-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px 25px;
+  background-color: white;
+}
+
 .react-tabs__tab-panel--selected {
   display: flex;
   flex: 1;
@@ -326,6 +336,14 @@ label {
   display: flex;
   flex-direction: column;
   flex: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.resume-infos-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 table,
@@ -343,7 +361,7 @@ tfoot {
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 900px) {
   p {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .home-name {
@@ -397,7 +415,7 @@ tfoot {
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
   }
 
