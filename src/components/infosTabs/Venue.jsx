@@ -8,13 +8,15 @@ const Venue = () => {
       <div className="infos-wraper">
         <div className="text-side-img">
           <p className="left-side text-side">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos
-            reiciendis facere nam! Quisquam fuga, dolorem rerum voluptatum,
-            veniam, voluptate a recusandae sunt similique magni illo temporibus
-            cum architecto. Autem! Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Molestias beatae ipsa eos non provident magnam a
-            ex atque maiores, rem sunt porro itaque pariatur nihil consectetur
-            commodi officia sit eius!
+            Lorsque nous avons commencé à regarder les lieux pour célébrer notre
+            mariage, nous avons rapidement eu un coup de cœur pour le domaine Le
+            Herre.
+            <br />
+            Ce domaine, à 1 heure de Bordeaux et à 5 minutes de la sortie
+            autoroutière La Réole est le lieu idéal pour nous réunir afin de
+            célébrer notre union. Ses grands espaces, son charme de l’ancien et
+            la nature qui l’entoure nous ont tout de suite ravis. Son grand
+            parking permettra à tout le monde de se garer sans problème.
           </p>
           <img src={Photo1} alt="venue-1" className="side-img" />
         </div>
@@ -25,13 +27,10 @@ const Venue = () => {
             alt="venue-1"
           />
           <p className="text-side">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos
-            reiciendis facere nam! Quisquam fuga, dolorem rerum voluptatum,
-            veniam, voluptate a recusandae sunt similique magni illo temporibus
-            cum architecto. Autem! Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Molestias beatae ipsa eos non provident magnam a
-            ex atque maiores, rem sunt porro itaque pariatur nihil consectetur
-            commodi officia sit eius!
+            Ce domaine dispose également d’une belle piscine où nous pourrons
+            profiter (si le temps d’avril le permet!) mais aussi de grands
+            espaces extérieurs pour pouvoir profiter tout le week-end tous
+            ensemble.
           </p>
         </div>
       </div>

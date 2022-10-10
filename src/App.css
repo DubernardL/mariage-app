@@ -28,10 +28,6 @@ li {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-.home-tab {
-  /* margin-right: 100px !important; */
-}
-
 p {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-size: 18px;
@@ -48,13 +44,9 @@ label {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background: linear-gradient(
-    0.9turn,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
   justify-content: space-around;
   align-items: center;
+  padding: 50px;
 }
 
 .home-name {
@@ -165,6 +157,7 @@ label {
 .text-side-img {
   display: flex;
   margin-bottom: 50px;
+  align-items: center;
 }
 
 .text-side {
@@ -201,7 +194,7 @@ label {
 }
 
 .tabs-container {
-  padding: 0px 15%;
+  padding: 0px 5%;
 }
 
 .infos-tabs-container {
@@ -279,14 +272,13 @@ label {
   justify-content: center;
 }
 
+.tab-list-container {
+  display: flex;
+}
+
 .react-tabs__tab-list {
   color: #fce6ed;
   background-color: transparent;
-  background: linear-gradient(
-    0.9turn,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
   margin: 0 0 0 0;
   padding: 20px 20px;
   display: flex;
@@ -397,14 +389,91 @@ tfoot {
   margin-right: 20px;
 }
 
+#burgerMenuIcon {
+  display: none;
+}
+
+.react-tabs {
+  background: linear-gradient(
+    0.9turn,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(222, 222, 222, 0.15);
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 900px) {
+  /* Burger MENU START */
+
+  #burgerMenuIcon {
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tab-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-closed-bm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-bar-container {
+    border-bottom: 1px solid rgba(222, 222, 222, 0.15);
+    padding: 16px;
+    display: inline;
+  }
+
+  .react-tabs__tab-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    padding: 0px 20px;
+  }
+
+  .tab-list {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: -300px 0 0 0;
+    transition: margin 0.3s;
+  }
+
+  .tab-list.is-open {
+    margin: 0 0 0 0;
+  }
+
+  .react-tabs__tab {
+    margin: 10px 0;
+  }
+
+  /* Burger MENU END  */
+
   p {
     font-size: 16px;
   }
 
   .home-name {
     font-size: 80px;
+  }
+
+  .home-text-container {
+    padding: 30px 0;
   }
 
   .home-title {
@@ -422,7 +491,6 @@ tfoot {
   .text-side-img {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
     align-items: center;
   }
 
@@ -431,18 +499,13 @@ tfoot {
   }
 
   .side-img {
-    width: 80%;
+    width: 60%;
     border-radius: 50%;
     margin: 20px 0;
   }
 
   .text-side {
-    text-align: center;
     margin: 0px;
-  }
-
-  .left-side {
-    text-align: center;
   }
 
   .invit-card {
@@ -483,11 +546,6 @@ tfoot {
     border: none;
   }
 
-  .react-tabs__tab {
-    font-size: 20px;
-    margin: 0px 10px;
-  }
-
   .text-side-img {
     display: flex;
     flex-direction: column-reverse;
@@ -500,20 +558,14 @@ tfoot {
   }
 
   .side-img {
-    width: 100%;
+    width: 90%;
     border-radius: 50%;
     margin: 20px 0;
   }
 
   .text-side {
-    text-align: center;
     margin: 0px;
   }
-
-  .left-side {
-    text-align: center;
-  }
-
   .form {
     margin-bottom: 50px;
     padding: 10px;
