@@ -7,9 +7,17 @@ import Home from "./components/Home";
 import Informations from "./components/Informations";
 import HomeImg from "./assets/photos/home_img_2.jpg";
 import homeIcon from "./assets/flower-img.svg";
+import burgerMenu from "./assets/burger-menu.svg";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+  const wrapperRef = React.createRef(null);
+
+  const burgerPressed = () => {
+    setBurgerMenuOpen(!burgerMenuOpen);
+  };
+
   return (
     <div
       className="mainContainer"
@@ -22,31 +30,48 @@ const App = () => {
     >
       <Tabs
         onSelect={(index, lastIndex, event) => {
+          setBurgerMenuOpen(false);
           setActiveTab(parseInt(event.nativeEvent.srcElement.id.slice(-1)));
         }}
         selectedIndex={activeTab}
       >
-        <TabList>
-          <img
-            style={{ width: 50, height: 50 }}
-            src={homeIcon}
-            alt="home-icon"
-          />
-          <Tab className={"home-tab react-tabs__tab"} tabIndex={"0"}>
-            Accueil
-          </Tab>
-          <div className="tab-list">
-            <Tab className={"react-tabs__tab"} tabIndex={"1"}>
-              Informations
-            </Tab>
-            <Tab className={"react-tabs__tab"} tabIndex={"2"}>
-              Répondre à l'invitation
-            </Tab>
-            <Tab className={"react-tabs__tab"} tabIndex={"3"}>
-              Liste des invités
-            </Tab>
+        <div className="nav-bar-container">
+          <div className="nav-closed-bm">
+            <img
+              style={{ width: 50, height: 50 }}
+              src={homeIcon}
+              alt="home-icon"
+            />
+            <button id="burgerMenuIcon" type="button" onClick={burgerPressed}>
+              <img
+                style={{ width: 25, height: 25 }}
+                src={burgerMenu}
+                alt="burger-menu-icon"
+              />
+            </button>
           </div>
-        </TabList>
+          <TabList>
+            <div
+              ref={wrapperRef}
+              className={burgerMenuOpen ? "tab-list is-open" : "tab-list"}
+            >
+              <Tab className={"home-tab react-tabs__tab"} tabIndex={"0"}>
+                Accueil
+              </Tab>
+              <div className="tab-list-container">
+                <Tab className={"react-tabs__tab"} tabIndex={"1"}>
+                  Informations
+                </Tab>
+                <Tab className={"react-tabs__tab"} tabIndex={"2"}>
+                  Répondre à l'invitation
+                </Tab>
+                <Tab className={"react-tabs__tab"} tabIndex={"3"}>
+                  Liste des invités
+                </Tab>
+              </div>
+            </div>
+          </TabList>
+        </div>
 
         <TabPanel>
           <Home />

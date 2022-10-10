@@ -8,13 +8,13 @@ const Meals = () => {
       <div className="infos-wraper">
         <div className="text-side-img">
           <p className="left-side text-side">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos
-            reiciendis facere nam! Quisquam fuga, dolorem rerum voluptatum,
-            veniam, voluptate a recusandae sunt similique magni illo temporibus
-            cum architecto. Autem! Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Molestias beatae ipsa eos non provident magnam a
-            ex atque maiores, rem sunt porro itaque pariatur nihil consectetur
-            commodi officia sit eius!
+            Pour ce qui est de se restaurer, nul besoin de sortir du domaine si
+            vous le désirez : nous pouvons vous proposer de manger sur place
+            selon votre arrivée : le vendredi soir, le samedi midi et le
+            dimanche soir moyennant 15€ par personne. Pour ceux qui désirent
+            arriver dès le vendredi soir, on vous propose de nous réunir autour
+            d’une petite paëlla maison avec une petite sangria pour
+            accompagner !
           </p>
           <img src={PhotoBedroom} className="side-img" alt="venue-1" />
         </div>
@@ -25,13 +25,8 @@ const Meals = () => {
             alt="venue-1"
           />
           <p className="text-side">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos
-            reiciendis facere nam! Quisquam fuga, dolorem rerum voluptatum,
-            veniam, voluptate a recusandae sunt similique magni illo temporibus
-            cum architecto. Autem! Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Molestias beatae ipsa eos non provident magnam a
-            ex atque maiores, rem sunt porro itaque pariatur nihil consectetur
-            commodi officia sit eius!
+            N.B : Vous pourrez indiquer si vous souhaitez manger sur le domaine
+            le temps de votre présence lorsque vous répondrez à l’invitation.
           </p>
         </div>
       </div>
