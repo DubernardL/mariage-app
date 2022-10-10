@@ -53,21 +53,21 @@ const GuestsList = ({ activeTab }) => {
   }, [dispatch, moreGuest]);
 
   const handleSubmit = (event) => {
-    dispatch(checkEmail(guest.email)).then(() => {
+    dispatch(checkEmail(guest.email, false)).then(() => {
       if (guest.id) {
         dispatch(updateGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
             g.id
-              ? dispatch(updateGuest(g))
-              : dispatch(addGuest({ ...g, email: guest.email }));
+              ? dispatch(updateGuest(g, false))
+              : dispatch(addGuest({ ...g, email: guest.email }, false));
           });
         }
       } else {
         dispatch(addGuest(guest));
         if (moreGuest.length > 0) {
           moreGuest.forEach((g) => {
-            dispatch(addGuest({ ...g, email: guest.email }));
+            dispatch(addGuest({ ...g, email: guest.email }, false));
           });
         }
       }
@@ -134,6 +134,18 @@ const GuestsList = ({ activeTab }) => {
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
+        {!validateEmail(guest.email) && (
+          <p>
+            Vous avez jusqu'au 20/02/2023 pour répondre à l'invitation ou
+            modifier vos informations.
+            <br />
+            Si vous êtes déjà enregistré, entrez votre email pour modifier vos
+            informations.
+            <br />
+            Si vous n'êtes pas encore enregistré, renseignez un email et vos
+            informations.
+          </p>
+        )}
         <table className="form-table">
           <tbody>
             <tr>
@@ -146,7 +158,7 @@ const GuestsList = ({ activeTab }) => {
                     setGuest({ ...guest, email: event.target.value });
                     validateEmail(event.target.value) &&
                       dispatch(checkEmail(event.target.value)).then((res) => {
-                        if (res.length > 0) {
+                        if (res && res.length > 0) {
                           let guestsFromGuest = [];
                           res.forEach((g) => {
                             g.fromEmailGuest
@@ -549,15 +561,21 @@ const GuestsList = ({ activeTab }) => {
             <h2>Résumé des préstations sélectionnées:</h2>
             <table>
               <tbody>
-                <p>
-                  Vous serez{" "}
-                  {guest.additionalGuests ? guest.additionalGuests + 1 : 1}{" "}
-                  invité
-                  {guest.additionalGuests + 1 > 1 && "s"}.
-                </p>
                 <tr>
                   <td>
-                    <h3 className="presta-title">Nuits : </h3>
+                    <h4 className="presta-title">Nombre d'invité(s) : </h4>
+                  </td>
+                  <td>
+                    <p>
+                      {guest.additionalGuests ? guest.additionalGuests + 1 : 1}{" "}
+                      invité
+                      {guest.additionalGuests + 1 > 1 && "s"}.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4 className="presta-title">Nuits : </h4>
                   </td>
                   <td>
                     {guest.nights.length !== 0 ? (
@@ -577,7 +595,7 @@ const GuestsList = ({ activeTab }) => {
                 </tr>
                 <tr>
                   <td>
-                    <h3 className="presta-title">Repas :</h3>
+                    <h4 className="presta-title">Repas :</h4>
                   </td>
                   <td>
                     {guest.meals.length !== 0 ? (
@@ -597,7 +615,7 @@ const GuestsList = ({ activeTab }) => {
                 {(guest.meals.length !== 0 || guest.nights.length !== 0) && (
                   <tr>
                     <td>
-                      <h3 className="presta-title">Prix :</h3>
+                      <h4 className="presta-title">Prix :</h4>
                     </td>
                     <td>
                       <p>

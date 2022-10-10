@@ -17,7 +17,8 @@ button {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Yanone Kaffeesatz", sans-serif;
   color: black;
   font-weight: 400;
@@ -389,7 +390,7 @@ tfoot {
   margin-right: 20px;
 }
 
-#burgerMenuIcon {
+#burger-menu-icon {
   display: none;
 }
 
@@ -413,11 +414,11 @@ tfoot {
 @media screen and (max-width: 900px) {
   /* Burger MENU START */
 
-  #burgerMenuIcon {
+  #burger-menu-icon {
     display: flex;
-    background-color: transparent;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
   }
 
   .tab-list-container {
@@ -515,6 +516,14 @@ tfoot {
   .invit-card-container {
     width: 100%;
   }
+
+  .form {
+    margin-bottom: 0;
+    padding: 10px;
+    width: 85%;
+    align-items: flex-start;
+    max-height: 80vh;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -566,11 +575,13 @@ tfoot {
   .text-side {
     margin: 0px;
   }
+
   .form {
-    margin-bottom: 50px;
+    margin-bottom: 0;
     padding: 10px;
-    width: 80%;
+    width: 85%;
     align-items: flex-start;
+    max-height: 80vh;
   }
 
   .form-line {
