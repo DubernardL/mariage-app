@@ -14,10 +14,6 @@ const App = () => {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const wrapperRef = React.createRef(null);
 
-  const burgerPressed = () => {
-    setBurgerMenuOpen(!burgerMenuOpen);
-  };
-
   return (
     <div
       className="mainContainer"
@@ -42,13 +38,18 @@ const App = () => {
               src={homeIcon}
               alt="home-icon"
             />
-            <button id="burgerMenuIcon" type="button" onClick={burgerPressed}>
-              <img
-                style={{ width: 25, height: 25 }}
-                src={burgerMenu}
-                alt="burger-menu-icon"
-              />
-            </button>
+            <div>
+              <button
+                id="burger-menu-icon"
+                onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+              >
+                <img
+                  style={{ width: 30, height: 30 }}
+                  src={burgerMenu}
+                  alt="burger-menu-icon"
+                />
+              </button>
+            </div>
           </div>
           <TabList>
             <div
