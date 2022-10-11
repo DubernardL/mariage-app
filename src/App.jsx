@@ -66,9 +66,9 @@ const App = () => {
                 <Tab className={"react-tabs__tab"} tabIndex={"2"}>
                   Répondre à l'invitation
                 </Tab>
-                <Tab className={"react-tabs__tab"} tabIndex={"3"}>
+                {/* <Tab className={"react-tabs__tab"} tabIndex={"3"}>
                   Liste des invités
-                </Tab>
+                </Tab> */}
               </div>
             </div>
           </TabList>
@@ -83,9 +83,9 @@ const App = () => {
         <TabPanel>
           <GuestRegistration />
         </TabPanel>
-        <TabPanel>
+        {/* <TabPanel>
           <GuestsList />
-        </TabPanel>
+        </TabPanel> */}
       </Tabs>
     </div>
   );
