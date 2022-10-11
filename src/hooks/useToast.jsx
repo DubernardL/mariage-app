@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 
 const toastConfig = {
-  duration: 3000,
+  duration: 4000,
   position: "top-center",
 
   // Styling
