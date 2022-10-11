@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mariage-app/static/css/main.975390c4.css",
-    "main.js": "/mariage-app/static/js/main.3d645856.js",
+    "main.js": "/mariage-app/static/js/main.02431bc4.js",
     "static/media/home_img_2.jpg": "/mariage-app/static/media/home_img_2.8e615c29b1ddac370540.jpg",
     "static/media/photo_piscine.jpeg": "/mariage-app/static/media/photo_piscine.b1118c51cb08e622f86d.jpeg",
     "static/media/photo_dortoires.jpeg": "/mariage-app/static/media/photo_dortoires.7522fead5e4e1aca7fd0.jpeg",
@@ -13,10 +13,10 @@
     "index.html": "/mariage-app/index.html",
     "static/media/burger-menu.svg": "/mariage-app/static/media/burger-menu.2b3a946c909dda0853eb150c3b772a28.svg",
     "main.975390c4.css.map": "/mariage-app/static/css/main.975390c4.css.map",
-    "main.3d645856.js.map": "/mariage-app/static/js/main.3d645856.js.map"
+    "main.02431bc4.js.map": "/mariage-app/static/js/main.02431bc4.js.map"
   },
   "entrypoints": [
     "static/css/main.975390c4.css",
-    "static/js/main.3d645856.js"
+    "static/js/main.02431bc4.js"
   ]
 }
