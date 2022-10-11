@@ -1,5 +1,6 @@
 import { fetchApi } from "./index";
 import useToast from "../hooks/useToast";
+import { updateGuestStore } from "../store/guestsReducer";
 
 export const getGuestsList = () => async (dispatch) => {
   const data = await dispatch(
@@ -26,6 +27,17 @@ export const addGuest =
     return data;
   };
 
+export const getGuest = (id) => async (dispatch) => {
+  const data = await dispatch(
+    fetchApi(`${process.env.REACT_APP_BASE_URL}api/v1/guests/${id}/`)
+  ).then((res) => {
+    dispatch(updateGuestStore(res));
+    return res;
+  });
+
+  return data;
+};
+
 export const updateGuest =
   (payload, toast = true) =>
   async (dispatch) => {
@@ -42,6 +54,7 @@ export const updateGuest =
 
     return data;
   };
+
 export const deleteGuest = (id) => async (dispatch) => {
   const data = await dispatch(
     fetchApi(`${process.env.REACT_APP_BASE_URL}api/v1/guests/${id}`, "DELETE")
@@ -58,7 +71,11 @@ export const checkEmail =
         `${process.env.REACT_APP_BASE_URL}api/v1/check_email?email=${email}`
       )
     ).then((res) => {
-      toast && res.length > 0 && useToast("On vous a retrouvé !");
+      if (res.length > 0) {
+        toast && useToast("On vous a retrouvé !");
+        const guest = res.find((r) => !r.fromEmailGuest);
+        guest && dispatch(updateGuestStore(guest));
+      }
       return res;
     });
 
