@@ -1,13 +1,13 @@
-export const getGuestPrice = (guest) => {
-  const { nights, meals, nightPreference } = guest;
+import store from "../store/index";
+
+export const getGuestPrice = () => {
+  const { nights, meals, nightPreference } = store.getState().guestsReducer;
+  const additionalsGuests = store.getState().guestsFromGuestReducer.length;
   const nightPrice =
     nightPreference === "gîte"
       ? process.env.REACT_APP_NIGHT_BEDROOM_PRICE
       : process.env.REACT_APP_NIGHT_PRICE;
-  const guestNumber =
-    !guest.additionalGuests || guest.additionalGuests === 0
-      ? 1
-      : guest.additionalGuests + 1;
+  const guestNumber = additionalsGuests === 0 ? 1 : additionalsGuests + 1;
   const price =
     ((nights.length ? nightPrice * nights.length : 0) +
       (meals.length ? process.env.REACT_APP_MEAL_PRICE * meals.length : 0)) *

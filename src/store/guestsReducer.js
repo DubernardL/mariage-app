@@ -14,7 +14,7 @@ const guestsSlice = createSlice({
   name: "guestsReducer",
   initialState,
   reducers: {
-    addGuestsToStore: (state, action) => {
+    updateGuestStore: (state, action) => {
       return action.payload;
     },
     resetGuest: () => {
@@ -23,6 +23,8 @@ const guestsSlice = createSlice({
   },
 });
 
-export const { addGuestsToStore, resetGuest } = guestsSlice.actions;
+export const getGuest = (state) => state.guestsReducer;
+export const { addGuestsToStore, resetGuest, updateGuestStore } =
+  guestsSlice.actions;
 
 export default guestsSlice.reducer;
