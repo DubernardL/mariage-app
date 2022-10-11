@@ -14,6 +14,7 @@ import deleteTrash from "../assets/delete-trash.svg";
 import addGuestIcon from "../assets/add-guest.svg";
 import homeIcon from "../assets/flower-img.svg";
 import { getGuestPrice } from "../helpers/price";
+import Alert from "./Alert";
 
 const GuestsList = ({ activeTab }) => {
   const dispatch = useDispatch();
@@ -134,18 +135,21 @@ const GuestsList = ({ activeTab }) => {
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
-        {!validateEmail(guest.email) && (
+        <Alert>
           <p>
             Vous avez jusqu'au 20/02/2023 pour répondre à l'invitation ou
             modifier vos informations.
             <br />
-            Si vous êtes déjà enregistré, entrez votre email pour modifier vos
-            informations.
-            <br />
-            Si vous n'êtes pas encore enregistré, renseignez un email et vos
-            informations.
+            <p style={{ textIndent: 15 }}>
+              Si vous êtes déjà enregistré, entrez votre email pour modifier vos
+              informations.
+            </p>
+            <p style={{ textIndent: 15 }}>
+              Si vous n'êtes pas encore enregistré, renseignez un email et vos
+              informations.
+            </p>
           </p>
-        )}
+        </Alert>
         <table className="form-table">
           <tbody>
             <tr>

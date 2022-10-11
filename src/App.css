@@ -410,6 +410,17 @@ tfoot {
   align-items: center;
 }
 
+/* Alert START  */
+.alert-wrapper {
+  background-color: #e97282;
+  padding: 20px 30px;
+  border-radius: 16px;
+  border-bottom: 6px solid #c32f5d;
+  color: white;
+  line-height: 25px;
+}
+/* Alert END  */
+
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 900px) {
   /* Burger MENU START */
