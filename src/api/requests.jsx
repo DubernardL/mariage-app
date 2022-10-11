@@ -27,16 +27,16 @@ export const addGuest =
     return data;
   };
 
-export const getGuest = (id) => async (dispatch) => {
-  const data = await dispatch(
-    fetchApi(`${process.env.REACT_APP_BASE_URL}api/v1/guests/${id}/`)
-  ).then((res) => {
-    dispatch(updateGuestStore(res));
-    return res;
-  });
+// export const getGuest = (id) => async (dispatch) => {
+//   const data = await dispatch(
+//     fetchApi(`${process.env.REACT_APP_BASE_URL}api/v1/guests/${id}/`)
+//   ).then((res) => {
+//     dispatch(updateGuestStore(res));
+//     return res;
+//   });
 
-  return data;
-};
+//   return data;
+// };
 
 export const updateGuest =
   (payload, toast = true) =>
