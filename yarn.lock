@@ -1898,6 +1898,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bezier-easing@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/bezier-easing/-/bezier-easing-2.1.2.tgz#04ce5a6e148543f5dca4e6066db363b19a6f294a"
+  integrity sha512-1f9PSSooB7VBfwNQm5nKE8i7XXWWtjKPmm1apg52pxq/mmuyJNZpvEzR2n+c0+XPs0ldLoVWWp54tqkXsKxFsA==
+  dependencies:
+    bezier-easing "*"
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -2913,6 +2920,11 @@ batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==
+
+bezier-easing@*, bezier-easing@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha512-gbIqZ/eslnUFC1tjEvtz0sgx+xTK20wDnYMIA27VA04R7w6xxXQPZDbibjA9DTWZRA2CXtwHykkVzlCaAJAZig==
 
 bfj@^7.0.2:
   version "7.0.2"
@@ -7744,6 +7756,15 @@ react-parallax@^3.5.1:
   resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.5.1.tgz#73071679371b7738e21ffac8daa0bc3cb7e5174d"
   integrity sha512-p5zPsPsqELlIOGaPS01O0IRx8R2bxcBAtrdF/RHf9nIxxk5hijbM2y89tk4rJQBcNH6ESSLe7J2NV4/ms7FLFw==
 
+react-plx@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-plx/-/react-plx-2.0.1.tgz#31abb3ec20dd39e6a3d93296d253a84f52fb3ce2"
+  integrity sha512-hEUhCZbHDCfoUawOi4dieiBOM5XY7bXlPwOPR+DDzGz6N9BdkJALwDQevT/F2ROq5bZXdZH8p35rK/GWwUAUQg==
+  dependencies:
+    "@types/bezier-easing" "^2.1.2"
+    bezier-easing "^2.1.0"
+    window-scroll-manager "^1.1.4"
+
 react-redux@^8.0.2:
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-8.0.4.tgz#80c31dffa8af9526967c4267022ae1525ff0e36a"
@@ -9429,6 +9450,11 @@ widest-line@^4.0.1:
   integrity sha512-o0cyEG0e8GPzT4iGHphIOh0cJOV8fivsXxddQasHPHfoZf1ZexrfeA21w2NaEN1RHE+fXlfISmOE8R9N3u3Qig==
   dependencies:
     string-width "^5.0.1"
+
+window-scroll-manager@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/window-scroll-manager/-/window-scroll-manager-1.1.4.tgz#7033c12edf778cb85fe545d3a1c37e1f1a7870c9"
+  integrity sha512-Oj916sD6Daigs128qtksCcBGvwXcuTuMn65m1FEp/QINBwbkval43p0qfZna2GFExXZFdoMTT3/s1of0szsG7A==
 
 word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"

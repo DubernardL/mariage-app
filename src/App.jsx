@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./App.css";
-import GuestsList from "./components/GuestsList";
 import GuestRegistration from "./components/GuestRegistration";
 import Home from "./components/Home";
+import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
 import HomeImg from "./assets/photos/home_img_2.jpg";
 import homeIcon from "./assets/flower-img.svg";
@@ -22,16 +22,24 @@ const App = () => {
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "50% 50%",
+        width: "100%",
+        height: "100%",
       }}
     >
       <Tabs
         onSelect={(index, lastIndex, event) => {
+          console.log(event.nativeEvent.srcElement.id);
           setBurgerMenuOpen(false);
           setActiveTab(parseInt(event.nativeEvent.srcElement.id.slice(-1)));
         }}
         selectedIndex={activeTab}
       >
-        <div className="nav-bar-container">
+        <div
+          className={
+            activeTab === 3 ? "nav-bar-container-disabled" : "nav-bar-container"
+          }
+        >
           <div className="nav-closed-bm">
             <img
               style={{ width: 50, height: 50 }}
@@ -66,9 +74,9 @@ const App = () => {
                 <Tab className={"react-tabs__tab"} tabIndex={"2"}>
                   Répondre à l'invitation
                 </Tab>
-                {/* <Tab className={"react-tabs__tab"} tabIndex={"3"}>
-                  Liste des invités
-                </Tab> */}
+                <Tab className={"react-tabs__tab"} tabIndex={"3"}>
+                  Histoire
+                </Tab>
               </div>
             </div>
           </TabList>
@@ -83,9 +91,9 @@ const App = () => {
         <TabPanel>
           <GuestRegistration />
         </TabPanel>
-        {/* <TabPanel>
-          <GuestsList />
-        </TabPanel> */}
+        <TabPanel>
+          <StoryTime onGoBackPressed={() => setActiveTab(0)} />
+        </TabPanel>
       </Tabs>
     </div>
   );

@@ -6,7 +6,7 @@ body,
   flex: 1;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100vh;
 }
 
@@ -58,6 +58,25 @@ label {
   margin-top: 50px;
   line-height: 50px;
   font-style: italic;
+}
+
+.story-name {
+  font-family: "Great Vibes", cursive;
+  color: #fce6ed;
+  margin: 0px;
+  font-size: 90px;
+  margin-top: 50px;
+  line-height: 50px;
+  font-style: italic;
+}
+
+.story-title {
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+  color: #fce6ed;
+  margin: 0px;
+  line-height: 100px;
+  font-size: 50px;
 }
 
 .home-border-container {
@@ -410,6 +429,10 @@ tfoot {
   align-items: center;
 }
 
+.nav-bar-container-disabled {
+  display: none;
+}
+
 /* Alert START  */
 .alert-wrapper {
   background-color: #e97282;
@@ -490,6 +513,15 @@ tfoot {
 
   .home-title {
     font-size: 100px;
+  }
+
+  .story-name {
+    margin-top: 150px;
+    font-size: 60px;
+  }
+
+  .story-title {
+    font-size: 40px;
   }
 
   .home-title-small {
