@@ -19,6 +19,7 @@ const Informations = () => {
           setActiveTab(parseInt(event.nativeEvent.srcElement.id.slice(-1)));
         }}
         selectedIndex={activeTab}
+        enableContentGestures={false}
       >
         <TabList className="infos-tabs-container">
           <Tab

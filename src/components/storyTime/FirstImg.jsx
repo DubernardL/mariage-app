@@ -1,7 +1,5 @@
 import Plx from "react-plx";
 import test1 from "./image/test.png";
-import test2 from "./image/test2.png";
-import test3 from "./image/test3.jpg";
 
 export default function App() {
   return (
@@ -41,29 +39,6 @@ export default function App() {
           alt="foreground"
         /> */}
       </Plx>
-      {/* <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 800,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.18,
-                property: "scale",
-              },
-            ],
-          },
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-        }}
-      >
-        <img style={{ width: "100%" }} src={test3} alt="background" />
-      </Plx> */}
       <Plx
         parallaxData={[
           {
@@ -87,32 +62,7 @@ export default function App() {
       >
         <p className="story-name">Olivia & Lucas</p>
         <p className="story-title">histoires ...</p>
-        {/* <img
-          style={{
-            width: "30vw",
-          }}
-          src={test2}
-          alt="Goonies"
-        /> */}
       </Plx>
-      {/* <div
-        style={{
-          position: "fixed",
-          lefft: 0,
-          top: 0,
-          zIndex: 200,
-          paddingTop: "56%",
-          height: "400vh",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            background: "#000",
-            height: "100%",
-          }}
-        ></div>
-      </div> */}
     </div>
   );
 }
