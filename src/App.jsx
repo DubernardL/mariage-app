@@ -19,7 +19,6 @@ const App = () => {
       className="mainContainer"
       style={{
         backgroundImage: `url(${HomeImg})`,
-        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 50%",
