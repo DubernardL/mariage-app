@@ -25,6 +25,7 @@ jobs:
         REACT_APP_NIGHT_BEDROOM_PRICE: ${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}
         REACT_APP_NIGHT_PRICE: ${{ secrets.REACT_APP_NIGHT_PRICE }}
         REACT_APP_MEAL_PRICE: ${{ secrets.REACT_APP_MEAL_PRICE }}
+        CI: false
         
 
     - name: Deploy
