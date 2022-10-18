@@ -1,13 +1,11 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useState } from "react";
-import SwipeableViews from "react-swipeable-views";
 import Venue from "./infosTabs/Venue";
 import Nights from "./infosTabs/Nights";
 import Meals from "./infosTabs/Meals";
 
 const Informations = () => {
-  const [lastIndex, setLastIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -15,7 +13,6 @@ const Informations = () => {
       <Tabs
         className="tabs-container"
         onSelect={(index, lastIndex, event) => {
-          setLastIndex(lastIndex);
           setActiveTab(parseInt(event.nativeEvent.srcElement.id.slice(-1)));
         }}
         selectedIndex={activeTab}
@@ -45,10 +42,7 @@ const Informations = () => {
           </Tab>
         </TabList>
 
-        <SwipeableViews
-          axis={lastIndex >= activeTab ? "x-reverse" : "x"}
-          index={activeTab}
-        >
+        <div>
           <TabPanel index={1}>
             <Venue />
           </TabPanel>
@@ -58,7 +52,7 @@ const Informations = () => {
           <TabPanel index={3}>
             <Meals />
           </TabPanel>
-        </SwipeableViews>
+        </div>
       </Tabs>
     </div>
   );
