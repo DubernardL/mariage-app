@@ -39,18 +39,6 @@ const App = () => {
           }
         >
           <div className="nav-closed-bm">
-            {/* <img
-              style={{
-                width: 50,
-                height: 50,
-                backgroundColor: "#FCE6ED",
-                borderRadius: 60,
-                padding: 5,
-                margin: "0 20px",
-              }}
-              src={homeIcon}
-              alt="home-icon"
-            /> */}
             <div>
               <button
                 id="burger-menu-icon"
