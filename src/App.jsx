@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
 import HomeImg from "./assets/photos/home_img_2.jpg";
-import homeIcon from "./assets/flower-img.svg";
 import burgerMenu from "./assets/burger-menu.svg";
 
 const App = () => {
