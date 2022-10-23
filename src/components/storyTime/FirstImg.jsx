@@ -1,5 +1,5 @@
 import Plx from "react-plx";
-import test1 from "./image/test.png";
+import screenContour from "./image/contour-ecran-02.png";
 
 export default function App() {
   return (
@@ -13,15 +13,14 @@ export default function App() {
             properties: [
               {
                 startValue: 1,
-                endValue: 1.6,
+                endValue: 1.4,
                 property: "scale",
               },
             ],
           },
         ]}
         style={{
-          backgroundImage: `url(${test1})`,
-          backgroundSize: "contain",
+          backgroundImage: `url(${screenContour})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "50% 0%",
@@ -32,13 +31,7 @@ export default function App() {
           height: "100%",
           zIndex: 100,
         }}
-      >
-        {/* <img
-          style={{ width: "100%", height: "100%" }}
-          src={test1}
-          alt="foreground"
-        /> */}
-      </Plx>
+      ></Plx>
       <Plx
         parallaxData={[
           {

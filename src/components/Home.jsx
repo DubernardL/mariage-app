@@ -17,7 +17,14 @@ const Home = () => {
         <div className="home-border-container">
           <div className="home-border" />
           <img
-            style={{ width: 60, height: 60 }}
+            style={{
+              width: 90,
+              height: 90,
+              backgroundColor: "#FCE6ED",
+              borderRadius: 60,
+              padding: 5,
+              margin: "0 20px",
+            }}
             src={homeIcon}
             alt="home-icon"
           />
