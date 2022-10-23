@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.aebd9dea.css",
-    "main.js": "/static/js/main.1a00c463.js",
+    "main.css": "/static/css/main.6b95c485.css",
+    "main.js": "/static/js/main.33ac68a3.js",
     "static/media/travaux.png": "/static/media/travaux.1335c4adb014b22906d6.png",
     "static/media/home_img_2.jpg": "/static/media/home_img_2.8e615c29b1ddac370540.jpg",
     "static/media/jeune.jpg": "/static/media/jeune.9c9c0cb702a3465ca4eb.jpg",
-    "static/media/test.png": "/static/media/test.2c519bf9ee771e033355.png",
+    "static/media/contour-ecran-02.png": "/static/media/contour-ecran-02.f748e2340d24c964be03.png",
     "static/media/photo_piscine.jpeg": "/static/media/photo_piscine.b1118c51cb08e622f86d.jpeg",
+    "static/media/flower-img.svg": "/static/media/flower-img.59a2bf69008e2140ff87ae48a5c20785.svg",
     "static/media/photo_dortoires.jpeg": "/static/media/photo_dortoires.7522fead5e4e1aca7fd0.jpeg",
     "static/media/photo_1.jpeg": "/static/media/photo_1.fe9b335c35d21e3d2b60.jpeg",
-    "static/media/flower-img.svg": "/static/media/flower-img.7a604623d30ba7f7e3af43762f0fa370.svg",
     "static/media/photo_bedroom.jpeg": "/static/media/photo_bedroom.9918d4ff898857845700.jpeg",
     "static/media/add-guest.svg": "/static/media/add-guest.f24734ecc725c209918e1b856b1dce6a.svg",
     "static/media/delete-trash.svg": "/static/media/delete-trash.6f42fa5eca4af89bba6f1c0af2db6439.svg",
     "index.html": "/index.html",
     "static/media/burger-menu.svg": "/static/media/burger-menu.2b3a946c909dda0853eb150c3b772a28.svg",
-    "main.aebd9dea.css.map": "/static/css/main.aebd9dea.css.map",
-    "main.1a00c463.js.map": "/static/js/main.1a00c463.js.map"
+    "main.6b95c485.css.map": "/static/css/main.6b95c485.css.map",
+    "main.33ac68a3.js.map": "/static/js/main.33ac68a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.aebd9dea.css",
-    "static/js/main.1a00c463.js"
+    "static/css/main.6b95c485.css",
+    "static/js/main.33ac68a3.js"
   ]
 }
