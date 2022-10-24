@@ -12,10 +12,7 @@ jobs:
       CI: false
       
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-          
-      - name: Build 🔧
+      - name: Fill .env file
         run: |
           cat << EOF > .env
           REACT_API_BASE_URL: ${{ secrets.REACT_API_BASE_URL }}
@@ -24,6 +21,12 @@ jobs:
           REACT_APP_NIGHT_PRICE: ${{ secrets.REACT_APP_NIGHT_PRICE }}
           REACT_APP_MEAL_PRICE: ${{ secrets.REACT_APP_MEAL_PRICE }}
           EOF
+          
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+          
+      - name: Build 🔧
+        run: |
           npm install
           npm run build
 
