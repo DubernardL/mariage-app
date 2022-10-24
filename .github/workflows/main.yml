@@ -19,6 +19,10 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+        
+        
+      - name: Test 🛎️
+        run: echo Hello world REACT_API_BASE_URL = ${{ secrets.REACT_API_BASE_URL }} !
 
       - name: Build 🔧
         run: |
