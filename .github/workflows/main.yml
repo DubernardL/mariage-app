@@ -17,6 +17,13 @@ jobs:
           
       - name: Build 🔧
         run: |
+          cat << EOF > .env
+          REACT_API_BASE_URL: ${{ secrets.REACT_API_BASE_URL }}
+          REACT_APP_ENV: ${{ secrets.REACT_APP_ENV }}
+          REACT_APP_NIGHT_BEDROOM_PRICE: ${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}
+          REACT_APP_NIGHT_PRICE: ${{ secrets.REACT_APP_NIGHT_PRICE }}
+          REACT_APP_MEAL_PRICE: ${{ secrets.REACT_APP_MEAL_PRICE }}
+          EOF
           npm install
           npm run build
 
@@ -25,11 +32,3 @@ jobs:
         with:
           BRANCH: gh-pages
           FOLDER: build
-          run: |
-            cat << EOF > .env
-            REACT_API_BASE_URL: ${{ secrets.REACT_API_BASE_URL }}
-            REACT_APP_ENV: ${{ secrets.REACT_APP_ENV }}
-            REACT_APP_NIGHT_BEDROOM_PRICE: ${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}
-            REACT_APP_NIGHT_PRICE: ${{ secrets.REACT_APP_NIGHT_PRICE }}
-            REACT_APP_MEAL_PRICE: ${{ secrets.REACT_APP_MEAL_PRICE }}
-            EOF
