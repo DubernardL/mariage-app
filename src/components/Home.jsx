@@ -1,5 +1,4 @@
 import React from "react";
-import homeIcon from "../assets/flower-img.svg";
 
 const Home = () => {
   return (
@@ -13,30 +12,12 @@ const Home = () => {
         <div className="home-name-container">
           <p className="home-name">Olivia & Lucas</p>
         </div>
-
-        <div className="home-border-container">
-          <div className="home-border" />
-          <img
-            style={{
-              width: 90,
-              height: 90,
-              backgroundColor: "#FCE6ED",
-              borderRadius: 60,
-              padding: 5,
-              margin: "0 20px",
-            }}
-            src={homeIcon}
-            alt="home-icon"
-          />
-          <div className="home-border" />
-        </div>
-
         <div className="home-title-container">
-          <p className="home-title">vous invite</p>
+          <p className="home-title title-invite">vous invitent</p>
           <p className="home-title home-title-small">
             a celebrer leur mariage le
           </p>
-          <p className="home-title">22 . 04 . 2023</p>
+          <p className="home-title date-title">22 . 04 . 2023</p>
         </div>
       </div>
     </div>
