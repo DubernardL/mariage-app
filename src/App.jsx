@@ -5,7 +5,7 @@ import GuestRegistration from "./components/GuestRegistration";
 import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
-import HomeImg from "./assets/photos/home_img_2.jpg";
+import HomeImg from "./assets/photos/home_img_1.jpg";
 import burgerMenu from "./assets/burger-menu.svg";
 
 const App = () => {
@@ -27,7 +27,6 @@ const App = () => {
     >
       <Tabs
         onSelect={(index, lastIndex, event) => {
-          console.log(event.nativeEvent.srcElement.id);
           setBurgerMenuOpen(false);
           setActiveTab(parseInt(event.nativeEvent.srcElement.id.slice(-1)));
         }}
