@@ -13,6 +13,8 @@ const App = () => {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const wrapperRef = React.createRef(null);
 
+  console.log("//////////////// : ", process.env);
+
   return (
     <div
       className="mainContainer"
