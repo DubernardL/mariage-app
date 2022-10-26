@@ -1,6 +1,5 @@
 import React from "react";
-import PhotoDortoires from "../../assets/photos/photo_dortoires.jpeg";
-import PhotoBedroom from "../../assets/photos/photo_bedroom.jpeg";
+import { photoDortoires, photoBedroom } from "../../assets/images";
 
 const Venue = () => {
   return (
@@ -22,12 +21,12 @@ const Venue = () => {
             festif jusqu’au bout. Vous avez donc la possibilité de dormir sur
             place 1, 2 ou 3 nuits.
           </p>
-          <img src={PhotoBedroom} className="side-img" alt="venue-1" />
+          <img src={photoBedroom} className="side-img" alt="venue-1" />
         </div>
         <div className="text-side-img img-first">
           <img
             className="left-side side-img"
-            src={PhotoDortoires}
+            src={photoDortoires}
             alt="venue-1"
           />
           <p className="text-side">

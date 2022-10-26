@@ -1,5 +1,5 @@
 import Plx from "react-plx";
-import screenContour from "./image/contour-ecran-02.png";
+import { filterScreen2PNG } from "../../assets/images";
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
           },
         ]}
         style={{
-          backgroundImage: `url(${screenContour})`,
+          backgroundImage: `url(${filterScreen2PNG})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "50% 0%",
