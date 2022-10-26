@@ -18,7 +18,8 @@ jobs:
     
     steps:
       - name: step 1
-        run: echo "The API key is:$REACT_API_BASE_URL"  
+        run: |
+          echo "The API key is:$REACT_API_BASE_URL"
 
       - name: 'Create env file'
         run: |
