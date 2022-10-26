@@ -4,7 +4,7 @@ import { updateGuestStore } from "../store/guestsReducer";
 
 export const getGuestsList = () => async (dispatch) => {
   const data = await dispatch(
-    fetchApi(`${process.env.REACT_API_BASE_URL}api/v1/guests`)
+    fetchApi(`${process.env.REACT_APP_API_BASE_URL}api/v1/guests`)
   );
 
   return data;
@@ -15,7 +15,7 @@ export const addGuest =
   async (dispatch) => {
     const data = await dispatch(
       fetchApi(
-        `${process.env.REACT_API_BASE_URL}api/v1/guests`,
+        `${process.env.REACT_APP_API_BASE_URL}api/v1/guests`,
         "POST",
         payload
       )
@@ -29,7 +29,7 @@ export const addGuest =
 
 // export const getGuest = (id) => async (dispatch) => {
 //   const data = await dispatch(
-//     fetchApi(`${process.env.REACT_API_BASE_URL}api/v1/guests/${id}/`)
+//     fetchApi(`${process.env.REACT_APP_API_BASE_URL}api/v1/guests/${id}/`)
 //   ).then((res) => {
 //     dispatch(updateGuestStore(res));
 //     return res;
@@ -43,7 +43,7 @@ export const updateGuest =
   async (dispatch) => {
     const data = await dispatch(
       fetchApi(
-        `${process.env.REACT_API_BASE_URL}api/v1/guests/${payload.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}api/v1/guests/${payload.id}`,
         "PUT",
         payload
       )
@@ -57,7 +57,10 @@ export const updateGuest =
 
 export const deleteGuest = (id) => async (dispatch) => {
   const data = await dispatch(
-    fetchApi(`${process.env.REACT_API_BASE_URL}api/v1/guests/${id}`, "DELETE")
+    fetchApi(
+      `${process.env.REACT_APP_API_BASE_URL}api/v1/guests/${id}`,
+      "DELETE"
+    )
   );
 
   return data;
@@ -68,7 +71,7 @@ export const checkEmail =
   async (dispatch) => {
     const data = await dispatch(
       fetchApi(
-        `${process.env.REACT_API_BASE_URL}api/v1/check_email?email=${email}`
+        `${process.env.REACT_APP_API_BASE_URL}api/v1/check_email?email=${email}`
       )
     ).then((res) => {
       if (res.length > 0) {
