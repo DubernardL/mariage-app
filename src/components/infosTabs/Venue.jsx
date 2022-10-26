@@ -4,7 +4,7 @@ import PhotoPiscine from "../../assets/photos/photo_piscine.jpeg";
 
 const Venue = () => {
   return (
-    <div className="infos-container">
+    <div className="infos-container undisplay-scroll">
       <div className="infos-wraper">
         <div className="text-side-img">
           <p className="left-side text-side">

@@ -159,7 +159,7 @@ const GuestsList = ({ activeTab }) => {
 
   return (
     <div className="form-container">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form undisplay-scroll" onSubmit={handleSubmit}>
         <Alert>
           <p>
             Vous avez jusqu'au 20/02/2023 pour répondre à l'invitation ou

@@ -21,6 +21,17 @@ body,
   height: 100vh;
 }
 
+/* hide scrollbar for chrome, safari and opera */
+.undisplay-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.undisplay-scroll {
+  /* hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 button {
   border: none;
   cursor: pointer;
@@ -176,8 +187,6 @@ label {
   width: 100%;
   height: 80vh;
   overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .infos-wraper {
@@ -185,11 +194,6 @@ label {
   flex: 1;
   padding-bottom: 100px;
   flex-direction: column;
-}
-
-/* hide scrollbar for chrome, safari and opera */
-.infos-container::-webkit-scrollbar {
-  display: none;
 }
 
 .text-side-img {
@@ -244,6 +248,7 @@ label {
   background-color: #fce6ed;
   overflow: scroll;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .tabs-container {
