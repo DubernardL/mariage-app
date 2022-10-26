@@ -4,7 +4,7 @@ import PhotoBedroom from "../../assets/photos/photo_bedroom.jpeg";
 
 const Meals = () => {
   return (
-    <div className="infos-container">
+    <div className="infos-container undisplay-scroll">
       <div className="infos-wraper">
         <div className="text-side-img">
           <p className="left-side text-side">

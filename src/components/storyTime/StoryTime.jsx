@@ -30,13 +30,11 @@ const StoryTime = ({ onGoBackPressed }) => {
       </div>
       <div
         style={{
-          overflow: "scroll",
           width: "100%",
         }}
       >
         <div
           style={{
-            overflow: "scroll",
             textAlign: "center",
           }}
         >
