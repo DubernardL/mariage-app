@@ -6,8 +6,9 @@ import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
 import { homeImg, burgerMenu } from "./assets/images";
-import Lottie from "react-lottie";
-import lottieLoader from ".//assets/lotties/lottieLoader.json";
+import Lottie from "react-lottie-player";
+import lottieLoader from "./assets/lotties/lottieLoader.json";
+import flowerImg1 from "./assets/images/flower-img-1.svg";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,20 +39,21 @@ const App = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        overflow: "hidden",
+        padding: 50,
       }}
     >
+      <img
+        style={{ width: 150, height: 150, paddingBottom: 50 }}
+        src={flowerImg1}
+        alt="home-icon"
+      />
       <p>Nous préparons le site ...</p>
       <Lottie
-        options={{
-          loop: true,
-          autoplay: true,
-          animationData: lottieLoader,
-          rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-          },
-        }}
-        width={"80%"}
-        height={"auto"}
+        loop
+        animationData={lottieLoader}
+        play
+        style={{ width: "80%", height: "80%" }}
       />
     </div>
   ) : (
