@@ -24,7 +24,17 @@ const StoryTime = ({ onGoBackPressed }) => {
         }}
       >
         <button type="button" id="add-guest-icon" onClick={onGoBackPressed}>
-          <p style={{ color: "white", marginLeft: 20 }}>retour</p>
+          <p
+            style={{
+              color: "white",
+              fontSize: 20,
+              fontWeight: "bold",
+              marginLeft: 20,
+              textTransform: "uppercase",
+            }}
+          >
+            Retour
+          </p>
         </button>
       </div>
       <div
@@ -108,13 +118,13 @@ const StoryTime = ({ onGoBackPressed }) => {
                   alignItems: "center",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? 0 : -50,
-                  screenWidth > 900 ? screenWidth * 0.25 : screenWidth * 0.1,
+                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
+                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.1,
                   1500,
                   2700
                 )}
               >
-                <p className="inner-text">
+                <p className="inner-text inner-text-left">
                   Cinq années après le lycée on se retrouve un été à Brétigny,
                   pour ne plus jamais se quitter : j’ai rapidement ma mutation
                   pour qu’on puisse s’installer ensemble, entre-temps on se
@@ -132,7 +142,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                 }}
                 parallaxData={translateXParallax(
                   screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
-                  screenWidth > 900 ? 100 : screenWidth * 0.1,
+                  screenWidth > 900 ? 100 : screenWidth * 0.2,
                   1500,
                   2700
                 )}

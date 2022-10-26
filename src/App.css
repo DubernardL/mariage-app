@@ -529,6 +529,10 @@ tfoot {
   font-size: 22;
   line-height: 30px;
 }
+
+.inner-text-left {
+  margin-right: 20%;
+}
 /* Story END */
 
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
