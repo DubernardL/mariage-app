@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
 import { homeImg, burgerMenu } from "./assets/images";
+import Lottie from "react-lottie";
+import lottieLoader from ".//assets/lotties/lottieLoader.json";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,13 +23,37 @@ const App = () => {
       loadImg.onerror = (err) => reject(err);
     })
       .then(() => setIsLoading(false))
+      // .then(() => setTimeout(() => setIsLoading(false), 10000))
       .catch((err) => console.log("Failed to load images", err));
   }, []);
 
   console.log("isLoading: ", isLoading);
 
   return isLoading ? (
-    <p>IS LOADING</p>
+    <div
+      style={{
+        display: "flex",
+        backgroundColor: "#FCE6ED",
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <p>Nous préparons le site ...</p>
+      <Lottie
+        options={{
+          loop: true,
+          autoplay: true,
+          animationData: lottieLoader,
+          rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+          },
+        }}
+        width={"80%"}
+        height={"auto"}
+      />
+    </div>
   ) : (
     <div
       className="mainContainer"
