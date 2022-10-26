@@ -10,24 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: false
-      REACT_API_BASE_URL: '${{ secrets.REACT_API_BASE_URL }}'
-      REACT_APP_ENV: '${{ secrets.REACT_APP_ENV }}'
-      REACT_APP_NIGHT_BEDROOM_PRICE: '${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}'
-      REACT_APP_NIGHT_PRICE: '${{ secrets.REACT_APP_NIGHT_PRICE }}'
-      REACT_APP_MEAL_PRICE: '${{ secrets.REACT_APP_MEAL_PRICE }}'
     
     steps:
-      - name: step 1
-        run: |
-          echo "The API key is:$REACT_API_BASE_URL"
-
       - name: 'Create env file'
         run: |
           touch .env
-          echo REACT_API_BASE_URL=$REACT_API_BASE_URL >> .env
-          echo REACT_APP_ENV=$REACT_APP_ENV >> .env
-          echo REACT_APP_NIGHT_BEDROOM_PRICE=$REACT_APP_NIGHT_BEDROOM_PRICE >> .env
-          echo REACT_APP_MEAL_PRICE=$REACT_APP_MEAL_PRICE >> .env
+          echo REACT_API_BASE_URL='${{ secrets.REACT_API_BASE_URL }}' >> .env
+          echo REACT_APP_ENV='${{ secrets.REACT_APP_ENV }}' >> .env
+          echo REACT_APP_NIGHT_BEDROOM_PRICE='${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}' >> .env
+          echo REACT_APP_NIGHT_PRICE='${{ secrets.REACT_APP_NIGHT_PRICE }}' >> .env
+          echo REACT_APP_MEAL_PRICE='${{ secrets.REACT_APP_MEAL_PRICE }}' >> .env
           cat .env
           
       - name: Checkout 🛎️
