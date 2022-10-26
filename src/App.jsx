@@ -61,7 +61,7 @@ const App = () => {
               </Tab>
               <div className="tab-list-container">
                 <Tab className={"react-tabs__tab"} tabIndex={"1"}>
-                  Informations du mariage
+                  Informations mariage
                 </Tab>
                 <Tab className={"react-tabs__tab"} tabIndex={"2"}>
                   Répondre à l'invitation
