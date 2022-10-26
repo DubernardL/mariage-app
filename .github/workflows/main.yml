@@ -33,7 +33,7 @@ jobs:
           envkey_REACT_APP_NIGHT_BEDROOM_PRICE: $secrets.REACT_APP_NIGHT_BEDROOM_PRICE
           envkey_REACT_APP_NIGHT_PRICE: $secrets.REACT_APP_NIGHT_PRICE
           envkey_REACT_APP_MEAL_PRICE: $secrets.REACT_APP_MEAL_PRICE
-          directory: /github/workspace/build
+          directory: ./
           file_name: .env
           
       - name: Deploy 🚀
