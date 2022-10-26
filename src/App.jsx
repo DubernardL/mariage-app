@@ -1,25 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./App.css";
 import GuestRegistration from "./components/GuestRegistration";
 import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
-import HomeImg from "./assets/photos/home_img_1.jpg";
-import burgerMenu from "./assets/burger-menu.svg";
+import { homeImg, burgerMenu } from "./assets/images";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(0);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const wrapperRef = React.createRef(null);
 
-  console.log("///////TEST de L ENV///////// : ", process.env);
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      const loadImg = new Image();
+      loadImg.src = homeImg;
+      loadImg.onload = () => resolve(homeImg);
+      loadImg.onerror = (err) => reject(err);
+    })
+      .then(() => setIsLoading(false))
+      .catch((err) => console.log("Failed to load images", err));
+  }, []);
 
-  return (
+  console.log("isLoading: ", isLoading);
+
+  return isLoading ? (
+    <p>IS LOADING</p>
+  ) : (
     <div
       className="mainContainer"
       style={{
-        backgroundImage: `url(${HomeImg})`,
+        backgroundImage: `url(${homeImg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 50%",

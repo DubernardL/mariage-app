@@ -15,9 +15,7 @@ import {
   deleteGuestFromStore,
 } from "../store/guestsFromGuestReducer";
 import { getGuest, updateGuestStore } from "../store/guestsReducer";
-import deleteTrash from "../assets/delete-trash.svg";
-import addGuestIcon from "../assets/add-guest.svg";
-import homeIcon from "../assets/flower-img.svg";
+import { deleteTrash, addGuestIcon, flowerImg2 } from "../assets/images";
 import { getGuestPrice } from "../helpers/price";
 import Alert from "./Alert";
 
@@ -439,7 +437,7 @@ const GuestsList = ({ activeTab }) => {
                   <div className="home-border" />
                   <img
                     style={{ width: 60, height: 60 }}
-                    src={homeIcon}
+                    src={flowerImg2}
                     alt="home-icon"
                   />
                   <div className="home-border" />

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Venue from "./infosTabs/Venue";
 import Nights from "./infosTabs/Nights";
 import Meals from "./infosTabs/Meals";
-import flower from "../assets/contour-ecran-02.svg";
+import filterScreen from "../assets/images/storyTime/contour-ecran-02.svg";
 
 const Informations = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -14,7 +14,7 @@ const Informations = () => {
       <div
         className="informations-container"
         style={{
-          backgroundImage: `url(${flower})`,
+          backgroundImage: `url(${filterScreen})`,
           backgroundSize: "100%",
           backgroundRepeat: "no-repeat",
         }}
