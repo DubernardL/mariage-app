@@ -1,6 +1,5 @@
 import React from "react";
-import Photo1 from "../../assets/photos/photo_1.jpeg";
-import PhotoPiscine from "../../assets/photos/photo_piscine.jpeg";
+import { venuImg, photoPiscine } from "../../assets/images";
 
 const Venue = () => {
   return (
@@ -18,12 +17,12 @@ const Venue = () => {
             la nature qui l’entoure nous ont tout de suite ravis. Son grand
             parking permettra à tout le monde de se garer sans problème.
           </p>
-          <img src={Photo1} alt="venue-1" className="side-img" />
+          <img src={venuImg} alt="venue-1" className="side-img" />
         </div>
         <div className="text-side-img img-first">
           <img
             className="left-side side-img"
-            src={PhotoPiscine}
+            src={photoPiscine}
             alt="venue-1"
           />
           <p className="text-side">

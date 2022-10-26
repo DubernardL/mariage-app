@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FirstImg from "./FirstImg";
 import Plx from "react-plx";
-import jeune from "../../assets/photos/story/jeune.jpg";
-import travaux from "../../assets/photos/story/travaux.png";
+import { jeune, travaux } from "../../assets/images";
 import { translateXParallax, blurParallax } from "../../helpers/parallax";
 
 const StoryTime = ({ onGoBackPressed }) => {
