@@ -11,7 +11,7 @@ jobs:
     env:
       CI: false
       REACT_APP_ENV: '${{ secrets.REACT_APP_ENV }}'
-      REACT_API_BASE_URL: '${{ secrets.REACT_API_BASE_URL }}'
+      REACT_APP_API_BASE_URL: '${{ secrets.REACT_APP_API_BASE_URL }}'
       REACT_APP_NIGHT_BEDROOM_PRICE: '${{ secrets.REACT_APP_NIGHT_BEDROOM_PRICE }}'
       REACT_APP_NIGHT_PRICE: '${{ secrets.REACT_APP_NIGHT_PRICE }}'
       REACT_APP_MEAL_PRICE: '${{ secrets.REACT_APP_MEAL_PRICE }}'
@@ -29,7 +29,7 @@ jobs:
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_REACT_APP_ENV: $secrets.REACT_APP_ENV
-          envkey_REACT_API_BASE_URL: $secrets.REACT_API_BASE_URL
+          envkey_REACT_APP_API_BASE_URL: $secrets.REACT_APP_API_BASE_URL
           envkey_REACT_APP_NIGHT_BEDROOM_PRICE: $secrets.REACT_APP_NIGHT_BEDROOM_PRICE
           envkey_REACT_APP_NIGHT_PRICE: $secrets.REACT_APP_NIGHT_PRICE
           envkey_REACT_APP_MEAL_PRICE: $secrets.REACT_APP_MEAL_PRICE
