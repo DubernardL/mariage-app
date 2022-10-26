@@ -12,6 +12,9 @@ jobs:
       CI: false
       
     steps:
+      - name: step 1
+        run: echo "The API key is:${{secrets.REACT_API_BASE_URL}}"  
+        
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
