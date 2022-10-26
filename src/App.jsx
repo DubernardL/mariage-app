@@ -8,31 +8,27 @@ import Informations from "./components/Informations";
 import { homeImg, burgerMenu } from "./assets/images";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(0);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const wrapperRef = React.createRef(null);
 
-  // useEffect(() => {
-  //   const loadImage = (image) => {
-  //     return new Promise((resolve, reject) => {
-  //       const loadImg = new Image();
-  //       loadImg.src = image.url;
-  //       // wait 2 seconds to simulate loading time
-  //       loadImg.onload = () =>
-  //         setTimeout(() => {
-  //           resolve(image.url);
-  //         }, 2000);
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      const loadImg = new Image();
+      loadImg.src = homeImg;
+      loadImg.onload = () => resolve(homeImg);
+      loadImg.onerror = (err) => reject(err);
+    })
+      .then(() => setIsLoading(false))
+      .catch((err) => console.log("Failed to load images", err));
+  }, []);
 
-  //       loadImg.onerror = (err) => reject(err);
-  //     });
-  //   };
+  console.log("isLoading: ", isLoading);
 
-  //   Promise.all(IMAGES.map((image) => loadImage(image)))
-  //     .then(() => setImgsLoaded(true))
-  //     .catch((err) => console.log("Failed to load images", err));
-  // }, []);
-
-  return (
+  return isLoading ? (
+    <p>IS LOADING</p>
+  ) : (
     <div
       className="mainContainer"
       style={{
