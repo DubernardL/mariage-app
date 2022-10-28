@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab901324.css",
-    "main.js": "/static/js/main.7109c008.js",
+    "main.css": "/static/css/main.dce1bd1c.css",
+    "main.js": "/static/js/main.631c28bb.js",
     "static/media/home_img_1.jpeg": "/static/media/home_img_1.5e5be04af21943a1eb34.jpeg",
     "static/media/travaux.jpeg": "/static/media/travaux.1335c4adb014b22906d6.jpeg",
     "static/media/signature-appart.jpeg": "/static/media/signature-appart.566c363d0b239a4e7920.jpeg",
     "static/media/pacs.jpeg": "/static/media/pacs.4ab9abe59e4b6492624a.jpeg",
     "static/media/CormorantGaramond-Regular.ttf": "/static/media/CormorantGaramond-Regular.e1f2c50eda29fd294be2.ttf",
+    "static/media/card-background.png": "/static/media/card-background.ca6f13d3f056b7e3cb9b.png",
     "static/media/jeune.jpeg": "/static/media/jeune.9c9c0cb702a3465ca4eb.jpeg",
     "static/media/contour-ecran-01.svg": "/static/media/contour-ecran-01.5f2a26312427d5c05d025d74cf9cae9d.svg",
     "static/media/contour-ecran-02.svg": "/static/media/contour-ecran-02.a5f0f9bed5b64ef0992394f4677fdf82.svg",
@@ -22,11 +23,11 @@
     "static/media/delete-trash.svg": "/static/media/delete-trash.6f42fa5eca4af89bba6f1c0af2db6439.svg",
     "index.html": "/index.html",
     "static/media/burger-menu.svg": "/static/media/burger-menu.2b3a946c909dda0853eb150c3b772a28.svg",
-    "main.ab901324.css.map": "/static/css/main.ab901324.css.map",
-    "main.7109c008.js.map": "/static/js/main.7109c008.js.map"
+    "main.dce1bd1c.css.map": "/static/css/main.dce1bd1c.css.map",
+    "main.631c28bb.js.map": "/static/js/main.631c28bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab901324.css",
-    "static/js/main.7109c008.js"
+    "static/css/main.dce1bd1c.css",
+    "static/js/main.631c28bb.js"
   ]
 }
