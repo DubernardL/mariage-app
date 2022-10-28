@@ -9,9 +9,7 @@ const Home = () => {
       }}
     >
       <div className="home-text-container">
-        <div className="home-name-container">
-          <p className="home-name">Olivia & Lucas</p>
-        </div>
+        <p className="home-name">Olivia & Lucas</p>
         <div className="home-title-container">
           <p className="home-title title-invite">vous invitent</p>
           <p className="home-title home-title-small">

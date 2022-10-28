@@ -15,9 +15,10 @@ import {
   deleteGuestFromStore,
 } from "../store/guestsFromGuestReducer";
 import { getGuest, updateGuestStore } from "../store/guestsReducer";
-import { deleteTrash, addGuestIcon, flowerImg2 } from "../assets/images";
+import { deleteTrash, addGuestIcon, flowerImg1 } from "../assets/images";
 import { getGuestPrice } from "../helpers/price";
 import Alert from "./Alert";
+import cardBackground from "../assets/images/storyTime/card-background.png";
 
 const GuestsList = ({ activeTab }) => {
   const dispatch = useDispatch();
@@ -156,18 +157,26 @@ const GuestsList = ({ activeTab }) => {
   };
 
   return (
-    <div className="form-container">
-      <form className="form undisplay-scroll" onSubmit={handleSubmit}>
+    <div className="informations-screen">
+      <form
+        className="form undisplay-scroll"
+        onSubmit={handleSubmit}
+        style={{
+          backgroundImage: `url(${cardBackground})`,
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <Alert>
-          <p>
+          <p className="white-text info-text">
             Vous avez jusqu'au 20/02/2023 pour répondre à l'invitation ou
             modifier vos informations.
             <br />
-            <p style={{ textIndent: 15 }}>
+            <p className="white-text info-text" style={{ textIndent: 15 }}>
               Si vous êtes déjà enregistré, entrez votre email pour modifier vos
               informations.
             </p>
-            <p style={{ textIndent: 15 }}>
+            <p className="white-text info-text" style={{ textIndent: 15 }}>
               Si vous n'êtes pas encore enregistré, renseignez un email et vos
               informations.
             </p>
@@ -437,8 +446,8 @@ const GuestsList = ({ activeTab }) => {
                   <div className="home-border" />
                   <img
                     style={{ width: 60, height: 60 }}
-                    src={flowerImg2}
-                    alt="home-icon"
+                    src={flowerImg1}
+                    alt="flowerImg1"
                   />
                   <div className="home-border" />
                 </div>
@@ -692,10 +701,12 @@ const GuestsList = ({ activeTab }) => {
                         </td>
                         <td>
                           <p>
-                            {guestFromStore?.price /
-                              (guestsFromGuestReducer.length
-                                ? guestsFromGuestReducer.length + 1
-                                : 1)}{" "}
+                            {Math.round(
+                              guestFromStore?.price /
+                                (guestsFromGuestReducer.length
+                                  ? guestsFromGuestReducer.length + 1
+                                  : 1)
+                            )}{" "}
                             € /personne, soit {guestFromStore?.price} € au total
                           </p>
                         </td>

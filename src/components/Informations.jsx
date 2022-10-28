@@ -4,7 +4,7 @@ import { useState } from "react";
 import Venue from "./infosTabs/Venue";
 import Nights from "./infosTabs/Nights";
 import Meals from "./infosTabs/Meals";
-import filterScreen from "../assets/images/storyTime/contour-ecran-02.svg";
+import cardBackground from "../assets/images/storyTime/card-background.png";
 
 const Informations = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -14,7 +14,7 @@ const Informations = () => {
       <div
         className="informations-container"
         style={{
-          backgroundImage: `url(${filterScreen})`,
+          backgroundImage: `url(${cardBackground})`,
           backgroundSize: "100%",
           backgroundRepeat: "no-repeat",
         }}
