@@ -13,13 +13,19 @@ const StoryTime = ({ onGoBackPressed }) => {
   }, []);
 
   return (
-    <div style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flex: 1,
+        flexDirection: "column",
+        overflowX: "hidden",
+      }}
+    >
       <div
         style={{
           zIndex: 999,
           position: "sticky",
           top: 20,
-          backgroundColor: "red",
           height: 0,
         }}
       >
@@ -118,8 +124,8 @@ const StoryTime = ({ onGoBackPressed }) => {
                   alignItems: "center",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
-                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.1,
+                  screenWidth > 900 ? screenWidth * 0.15 : -50,
+                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.15,
                   1500,
                   2700
                 )}

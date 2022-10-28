@@ -5,50 +5,37 @@ import GuestRegistration from "./components/GuestRegistration";
 import Home from "./components/Home";
 import StoryTime from "./components/storyTime/StoryTime";
 import Informations from "./components/Informations";
-import { homeImg, burgerMenu } from "./assets/images";
+import { homeImg, burgerMenu, flowerImg1 } from "./assets/images";
 import Lottie from "react-lottie-player";
 import lottieLoader from "./assets/lotties/lottieLoader.json";
-import flowerImg1 from "./assets/images/flower-img-1.svg";
+import useImagePreloader from "./hooks/useImagePreloader";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [imageLoaded, setimageLoaded] = useState(true);
   const [activeTab, setActiveTab] = useState(0);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const wrapperRef = React.createRef(null);
+  const { imagesPreloaded } = useImagePreloader();
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      const loadImg = new Image();
-      loadImg.src = homeImg;
-      loadImg.onload = () => resolve(homeImg);
-      loadImg.onerror = (err) => reject(err);
-    })
-      .then(() => setIsLoading(false))
-      // .then(() => setTimeout(() => setIsLoading(false), 10000))
-      .catch((err) => console.log("Failed to load images", err));
-  }, []);
+    setimageLoaded(imagesPreloaded);
+  }, [imagesPreloaded]);
 
-  console.log("isLoading: ", isLoading);
-
-  return isLoading ? (
+  return !imageLoaded ? (
     <div
       style={{
         display: "flex",
-        backgroundColor: "#FCE6ED",
+        backgroundColor: "#F5D2DA",
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
         overflow: "hidden",
-        padding: 50,
+        padding: "5%",
       }}
     >
-      <img
-        style={{ width: 150, height: 150, paddingBottom: 50 }}
-        src={flowerImg1}
-        alt="home-icon"
-      />
-      <p>Nous préparons le site ...</p>
+      <img className="loader-img" src={flowerImg1} alt="home-icon" />
+      <p className="loader-title">Nous préparons le site ...</p>
       <Lottie
         loop
         animationData={lottieLoader}
@@ -63,9 +50,7 @@ const App = () => {
         backgroundImage: `url(${homeImg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "50% 50%",
-        width: "100%",
-        height: "100%",
+        backgroundPosition: "45% 55%",
       }}
     >
       <Tabs

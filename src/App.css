@@ -17,7 +17,6 @@ body,
   flex: 1;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
   height: 100vh;
 }
 
@@ -42,7 +41,7 @@ h2,
 h3,
 h4 {
   font-family: "Title-font";
-  color: black;
+  color: rgb(74, 55, 61);
   font-weight: 400;
   margin: 0;
 }
@@ -59,10 +58,23 @@ p {
   text-align: justify;
 }
 
-label {
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  color: black;
+.white-text {
+  font-family: "Title-font";
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  text-align: justify;
+}
+
+.info-text {
   font-size: 20px;
+}
+
+label {
+  font-family: "Title-font";
+  color: rgb(74, 55, 61);
+  font-size: 20px;
+  margin-right: 8px;
 }
 
 .home-text-container {
@@ -71,7 +83,6 @@ label {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 50px;
 }
 
 .home-name {
@@ -81,6 +92,21 @@ label {
   font-size: 100px;
   margin-top: 50px;
   line-height: 50px;
+}
+
+.loader-title {
+  font-family: "Great Vibes", cursive;
+  color: white;
+  margin: 0px;
+  font-size: 40px;
+  margin-top: 50px;
+  line-height: 50px;
+}
+
+.loader-img {
+  width: 150px;
+  height: 150px;
+  padding-bottom: 20;
 }
 
 .story-name {
@@ -119,7 +145,7 @@ label {
   margin: 0px;
   height: 4px;
   width: 20%;
-  border: 1px solid #f5b3c1;
+  border: 1px solid #c32f5d;
   border-right: none;
   border-left: none;
 }
@@ -158,10 +184,10 @@ label {
   flex-direction: column;
   background-color: #fce6ed;
   border-radius: 16px;
-  padding: 50px;
-  width: 60%;
-  max-height: 70vh;
-  margin-bottom: 50px;
+  padding: 20px;
+  width: 85%;
+  max-height: 80vh;
+  margin-bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 0px 0px 8px 8px rgba(51, 50, 50, 0.503);
@@ -280,15 +306,11 @@ input {
   padding: 4px 4px 4px 4px;
 }
 
-label {
-  margin-right: 8px;
-}
-
 .invit-card {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #ebeef1;
+  background-color: #f5b3c1;
   padding: 20px 30px;
   border-radius: 8px;
   margin: 15px 0;
@@ -413,8 +435,8 @@ label {
 
 table,
 td {
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  color: black;
+  font-family: "Title-font";
+  color: rgb(74, 55, 61);
   font-size: 20px;
   border: 1px solid #333;
   padding: 5px;
@@ -423,6 +445,8 @@ td {
 /* Form td style */
 form.form table.form-table td {
   border: none;
+  font-family: "Title-font";
+  color: rgb(74, 55, 61);
 }
 
 div.presta-table table {
@@ -431,6 +455,8 @@ div.presta-table table {
 
 div.presta-table table td {
   border: none;
+  font-family: "Title-font";
+  color: rgb(74, 55, 61);
 }
 
 .presta-table {
@@ -473,10 +499,10 @@ tfoot {
 
 /* Alert START  */
 .alert-wrapper {
-  background-color: #e97282;
+  background-color: #f5b3c1;
   padding: 20px 30px;
   border-radius: 16px;
-  border-bottom: 6px solid #c32f5d;
+  border-bottom: 6px solid #e97282;
   color: white;
   line-height: 25px;
 }
@@ -593,17 +619,20 @@ tfoot {
   p {
     font-size: 16px;
   }
-
-  .home-name {
-    font-size: 80px;
-  }
-
   .home-text-container {
     padding: 30px 0;
   }
 
+  .home-name {
+    font-size: 70px;
+  }
+
   .home-title {
-    font-size: 100px;
+    font-size: 60px;
+  }
+
+  .home-title-small {
+    font-size: 40px;
   }
 
   .story-name {
@@ -613,10 +642,6 @@ tfoot {
   }
 
   .story-title {
-    font-size: 40px;
-  }
-
-  .home-title-small {
     font-size: 40px;
   }
 
@@ -719,6 +744,8 @@ tfoot {
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   label {
+    font-family: "Title-font";
+    color: rgb(74, 55, 61);
     font-size: 20px;
     font-weight: 600;
   }
@@ -733,7 +760,7 @@ tfoot {
   }
 
   .home-title {
-    font-size: 70px;
+    font-size: 50px;
   }
 
   .home-title-small {
