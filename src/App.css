@@ -52,22 +52,23 @@ li {
 
 p {
   font-family: "Title-font";
-  color: rgb(74, 55, 61);
+  color: rgb(70, 64, 66);
   font-size: 18px;
   margin: 0;
   text-align: justify;
 }
 
 .white-text {
-  font-family: "Title-font";
   color: white;
-  font-size: 18px;
-  margin: 0;
-  text-align: justify;
 }
 
 .info-text {
-  font-size: 20px;
+  font-family: "Title-font";
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  text-align: justify;
+  margin: 0;
 }
 
 label {
@@ -230,9 +231,8 @@ label {
 
 .text-side {
   flex: 1;
-  line-height: 34px;
-  font-size: 22px;
-  letter-spacing: 2px;
+  line-height: 42px;
+  font-size: 24px;
 }
 
 .side-img {
@@ -338,7 +338,9 @@ input {
 }
 
 #submit-btn {
-  padding: 8px;
+  font-family: "Title-font";
+  font-size: 18px;
+  padding: 8px 16px;
   background-color: #c32f5d;
   border-radius: 10px;
   border: 4px solid #c32f5d;
@@ -439,7 +441,6 @@ td {
   color: rgb(74, 55, 61);
   font-size: 20px;
   border: 1px solid #333;
-  padding: 5px;
 }
 
 /* Form td style */
@@ -461,6 +462,10 @@ div.presta-table table td {
 
 .presta-table {
   margin: 30px 0;
+  background-color: #f5b3c1;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 3px 3px 10px #dfe3e7;
 }
 
 thead,
@@ -471,6 +476,7 @@ tfoot {
 
 .presta-title {
   margin-right: 20px;
+  color: white;
 }
 
 #burger-menu-icon {
@@ -617,8 +623,9 @@ tfoot {
   /* Burger MENU END  */
 
   p {
-    font-size: 16px;
+    font-size: 18px;
   }
+
   .home-text-container {
     padding: 30px 0;
   }
@@ -667,6 +674,8 @@ tfoot {
 
   .text-side {
     margin: 0px;
+    font-size: 22px;
+    line-height: 32px;
   }
 
   .invit-card {
@@ -739,6 +748,12 @@ tfoot {
     margin: 30px 0;
   }
   /* Story END */
+
+  .info-text {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 1px;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -751,7 +766,7 @@ tfoot {
   }
 
   p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
   }
 
@@ -791,6 +806,8 @@ tfoot {
 
   .text-side {
     margin: 0px;
+    font-size: 20px;
+    line-height: 32px;
   }
 
   .form {
@@ -813,5 +830,10 @@ tfoot {
 
   .invit-card-container {
     width: 100%;
+  }
+
+  .info-text {
+    font-size: 20px;
+    line-height: 26px;
   }
 }

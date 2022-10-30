@@ -1,5 +1,4 @@
 import React from "react";
-import { photoDortoires, photoBedroom } from "../../assets/images";
 
 const Meals = () => {
   return (
@@ -7,26 +6,32 @@ const Meals = () => {
       <div className="infos-wraper">
         <div className="text-side-img">
           <p className="left-side text-side">
-            Pour ce qui est de se restaurer, nul besoin de sortir du domaine si
-            vous le désirez : nous pouvons vous proposer de manger sur place
-            selon votre arrivée : le vendredi soir, le samedi midi et le
-            dimanche soir moyennant 15€ par personne. Pour ceux qui désirent
-            arriver dès le vendredi soir, on vous propose de nous réunir autour
-            d’une petite paëlla maison avec une petite sangria pour
-            accompagner !
+            En ce qui concerne les repas du vendredi soir, samedi midi et
+            dimanche soir, nous vous proposons de festoyer et de trinquer tous
+            ensemble autour de bons repas cuisinés par le traiteur moyennant{" "}
+            <b>15€ par personne et par repas</b>.
+            <br />
+            <br />
+            N.B : Vous pourrez indiquer si vous souhaitez manger sur le domaine
+            le temps de votre présence lorsque vous répondrez à l’invitation.
+            <br />
+            <br />
+            <br />
+            <p
+              style={{ fontSize: 26, textAlign: "center", fontStyle: "italic" }}
+            >
+              Menus à venir ...
+            </p>
           </p>
-          <img src={photoBedroom} className="side-img" alt="venue-1" />
+          {/* <img src={photoBedroom} className="side-img" alt="venue-1" /> */}
         </div>
         <div className="text-side-img img-first">
-          <img
+          {/* <img
             className="left-side side-img"
             src={photoDortoires}
             alt="venue-1"
-          />
-          <p className="text-side">
-            N.B : Vous pourrez indiquer si vous souhaitez manger sur le domaine
-            le temps de votre présence lorsque vous répondrez à l’invitation.
-          </p>
+          /> */}
+          {/* <p className="text-side"></p> */}
         </div>
       </div>
     </div>
