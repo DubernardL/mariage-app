@@ -169,15 +169,15 @@ const GuestsList = ({ activeTab }) => {
       >
         <Alert>
           <p className="white-text info-text">
-            Vous avez jusqu'au 20/02/2023 pour répondre à l'invitation ou
+            Vous avez jusqu'au <b>22/02/2023</b> pour répondre à l'invitation ou
             modifier vos informations.
             <br />
             <p className="white-text info-text" style={{ textIndent: 15 }}>
-              Si vous êtes déjà enregistré, entrez votre email pour modifier vos
-              informations.
+              - Si vous êtes déjà enregistré, entrez votre email pour modifier
+              vos informations.
             </p>
             <p className="white-text info-text" style={{ textIndent: 15 }}>
-              Si vous n'êtes pas encore enregistré, renseignez un email et vos
+              - Si vous n'êtes pas encore enregistré, renseignez un email et vos
               informations.
             </p>
           </p>
@@ -262,177 +262,193 @@ const GuestsList = ({ activeTab }) => {
                     </td>
                   </tr>
                 </>
-                {guestFromStore.firstName && guestFromStore.lastName && (
-                  <>
-                    <tr>
-                      <td>Présence</td>
-                      <td>
-                        <p>
-                          <input
-                            type="radio"
-                            value={"yes"}
-                            checked={guestFromStore.isPresent}
-                            onChange={handleChangeRadio}
-                          />
-                          Oui
-                        </p>
-                        <p>
-                          <input
-                            type="radio"
-                            value={"no"}
-                            checked={
-                              typeof guestFromStore.isPresent === "boolean"
-                                ? !guestFromStore.isPresent
-                                : false
-                            }
-                            onChange={handleChangeRadio}
-                          />
-                          Non
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Nuits</td>
-                      <td>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Vendredi"
-                            checked={guestFromStore.nights.includes("Vendredi")}
-                            onChange={(v) => handleNightsChange(v)}
-                          />
-                          Vendredi
-                        </p>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Samedi"
-                            checked={guestFromStore.nights.includes("Samedi")}
-                            onChange={(v) => handleNightsChange(v)}
-                          />
-                          Samedi
-                        </p>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Dimanche"
-                            checked={guestFromStore.nights.includes("Dimanche")}
-                            onChange={(v) => handleNightsChange(v)}
-                          />
-                          Dimanche
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Préférence pour la/les nuits</td>
-                      <td>
-                        <p>
-                          <input
-                            type="radio"
-                            value={"gîte"}
-                            checked={guestFromStore.nightPreference === "gîte"}
-                            onChange={(e) => handleChangeRadio(e, true)}
-                          />
-                          Gîte (chambre)
-                        </p>
-                        <p>
-                          <input
-                            type="radio"
-                            value={"dortoir"}
-                            checked={
-                              guestFromStore.nightPreference === "dortoir"
-                            }
-                            onChange={(e) => handleChangeRadio(e, true)}
-                          />
-                          Dortoir
-                        </p>
-                        <p>
-                          <input
-                            type="radio"
-                            value={"no"}
-                            checked={guestFromStore.nightPreference === "no"}
-                            onChange={(e) => handleChangeRadio(e, true)}
-                          />
-                          Pas de préférences
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Repas</td>
-                      <td>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Vendredi soir"
-                            checked={guestFromStore.meals.includes(
-                              "Vendredi soir"
-                            )}
-                            onChange={(v) => handleMealsChange(v)}
-                          />
-                          Vendredi soir
-                        </p>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Samedi midi"
-                            checked={guestFromStore.meals.includes(
-                              "Samedi midi"
-                            )}
-                            onChange={(v) => handleMealsChange(v)}
-                          />
-                          Samedi midi
-                        </p>
-                        <p>
-                          <input
-                            type="checkbox"
-                            name="Dimanche soir"
-                            checked={guestFromStore.meals.includes(
-                              "Dimanche soir"
-                            )}
-                            onChange={(v) => handleMealsChange(v)}
-                          />
-                          Dimanche soir
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Allergies</td>
-                      <td>
-                        <textarea
-                          type="text"
-                          style={{ maxWidth: 250, maxHeight: 120 }}
-                          value={guestFromStore.allergies || ""}
-                          onChange={(event) =>
-                            dispatch(
-                              updateGuestStore({
-                                ...guestFromStore,
-                                allergies: event.target.value,
-                              })
-                            )
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Régime</td>
-                      <td>
-                        <textarea
-                          type="text"
-                          style={{ maxWidth: 250, maxHeight: 120 }}
-                          value={guestFromStore.diets || ""}
-                          onChange={(event) =>
-                            dispatch(
-                              updateGuestStore({
-                                ...guestFromStore,
-                                diets: event.target.value,
-                              })
-                            )
-                          }
-                        />
-                      </td>
-                    </tr>
-                  </>
-                )}
+                {guestFromStore.email &&
+                  guestFromStore.firstName &&
+                  guestFromStore.lastName && (
+                    <>
+                      <tr>
+                        <td>Présence</td>
+                        <td>
+                          <p>
+                            <input
+                              type="radio"
+                              value={"yes"}
+                              checked={guestFromStore.isPresent}
+                              onChange={handleChangeRadio}
+                            />
+                            Oui
+                          </p>
+                          <p>
+                            <input
+                              type="radio"
+                              value={"no"}
+                              checked={
+                                typeof guestFromStore.isPresent === "boolean"
+                                  ? !guestFromStore.isPresent
+                                  : false
+                              }
+                              onChange={handleChangeRadio}
+                            />
+                            Non
+                          </p>
+                        </td>
+                      </tr>
+                      {guestFromStore.isPresent && (
+                        <>
+                          <tr>
+                            <td>Nuits</td>
+                            <td>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Vendredi"
+                                  checked={guestFromStore.nights.includes(
+                                    "Vendredi"
+                                  )}
+                                  onChange={(v) => handleNightsChange(v)}
+                                />
+                                Vendredi
+                              </p>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Samedi"
+                                  checked={guestFromStore.nights.includes(
+                                    "Samedi"
+                                  )}
+                                  onChange={(v) => handleNightsChange(v)}
+                                />
+                                Samedi
+                              </p>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Dimanche"
+                                  checked={guestFromStore.nights.includes(
+                                    "Dimanche"
+                                  )}
+                                  onChange={(v) => handleNightsChange(v)}
+                                />
+                                Dimanche
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Préférence pour la/les nuits</td>
+                            <td>
+                              <p>
+                                <input
+                                  type="radio"
+                                  value={"gîte"}
+                                  checked={
+                                    guestFromStore.nightPreference === "gîte"
+                                  }
+                                  onChange={(e) => handleChangeRadio(e, true)}
+                                />
+                                Gîte (chambre)
+                              </p>
+                              <p>
+                                <input
+                                  type="radio"
+                                  value={"dortoir"}
+                                  checked={
+                                    guestFromStore.nightPreference === "dortoir"
+                                  }
+                                  onChange={(e) => handleChangeRadio(e, true)}
+                                />
+                                Dortoir
+                              </p>
+                              <p>
+                                <input
+                                  type="radio"
+                                  value={"no"}
+                                  checked={
+                                    guestFromStore.nightPreference === "no"
+                                  }
+                                  onChange={(e) => handleChangeRadio(e, true)}
+                                />
+                                Pas de préférence
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Repas</td>
+                            <td>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Vendredi soir"
+                                  checked={guestFromStore.meals.includes(
+                                    "Vendredi soir"
+                                  )}
+                                  onChange={(v) => handleMealsChange(v)}
+                                />
+                                Vendredi soir
+                              </p>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Samedi midi"
+                                  checked={guestFromStore.meals.includes(
+                                    "Samedi midi"
+                                  )}
+                                  onChange={(v) => handleMealsChange(v)}
+                                />
+                                Samedi midi
+                              </p>
+                              <p>
+                                <input
+                                  type="checkbox"
+                                  name="Dimanche soir"
+                                  checked={guestFromStore.meals.includes(
+                                    "Dimanche soir"
+                                  )}
+                                  onChange={(v) => handleMealsChange(v)}
+                                />
+                                Dimanche soir
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Allergies alimentaires</td>
+                            <td>
+                              <textarea
+                                type="text"
+                                style={{ maxWidth: 250, maxHeight: 120 }}
+                                value={guestFromStore.allergies || ""}
+                                onChange={(event) =>
+                                  dispatch(
+                                    updateGuestStore({
+                                      ...guestFromStore,
+                                      allergies: event.target.value,
+                                    })
+                                  )
+                                }
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Régime alimentaire</td>
+                            <td>
+                              <textarea
+                                type="text"
+                                style={{ maxWidth: 250, maxHeight: 120 }}
+                                value={guestFromStore.diets || ""}
+                                onChange={(event) =>
+                                  dispatch(
+                                    updateGuestStore({
+                                      ...guestFromStore,
+                                      diets: event.target.value,
+                                    })
+                                  )
+                                }
+                              />
+                            </td>
+                          </tr>
+                        </>
+                      )}
+                    </>
+                  )}
               </>
             )}
           </tbody>
@@ -547,7 +563,7 @@ const GuestsList = ({ activeTab }) => {
                               </td>
                             </tr>
                             <tr>
-                              <td>Allergies</td>
+                              <td>Allergies alimentaires</td>
                               <td>
                                 <textarea
                                   type="text"
@@ -567,7 +583,7 @@ const GuestsList = ({ activeTab }) => {
                               </td>
                             </tr>
                             <tr>
-                              <td>Régime</td>
+                              <td>Régime alimentaire</td>
                               <td>
                                 <textarea
                                   type="text"
@@ -631,7 +647,12 @@ const GuestsList = ({ activeTab }) => {
 
             {guestFromStore.isPresent && (
               <div className="presta-table">
-                <h2>Résumé des préstations sélectionnées:</h2>
+                <h2
+                  className="white-text"
+                  style={{ textAlign: "center", marginBottom: 15 }}
+                >
+                  Résumé des prestations sélectionnées
+                </h2>
                 <table>
                   <tbody>
                     <tr>
@@ -639,7 +660,7 @@ const GuestsList = ({ activeTab }) => {
                         <h4 className="presta-title">Nombre d'invité(s) : </h4>
                       </td>
                       <td>
-                        <p>
+                        <p className="white-text">
                           {guestsFromGuestReducer.length
                             ? guestsFromGuestReducer.length + 1
                             : 1}{" "}
@@ -654,7 +675,7 @@ const GuestsList = ({ activeTab }) => {
                       </td>
                       <td>
                         {guestFromStore.nights.length !== 0 ? (
-                          <p>
+                          <p className="white-text">
                             {guestFromStore.nights.map((n, i) => (
                               <span>
                                 {`${n}${
@@ -666,7 +687,9 @@ const GuestsList = ({ activeTab }) => {
                             ))}
                           </p>
                         ) : (
-                          <p>Pas de nuit supplémentaire.</p>
+                          <p className="white-text">
+                            Pas de nuit supplémentaire.
+                          </p>
                         )}
                       </td>
                     </tr>
@@ -676,7 +699,7 @@ const GuestsList = ({ activeTab }) => {
                       </td>
                       <td>
                         {guestFromStore.meals.length !== 0 ? (
-                          <p>
+                          <p className="white-text">
                             {guestFromStore.meals.map((m, i) => (
                               <span>
                                 {`${m}${
@@ -688,7 +711,9 @@ const GuestsList = ({ activeTab }) => {
                             ))}
                           </p>
                         ) : (
-                          <p>Pas de repas supplémentaire.</p>
+                          <p className="white-text">
+                            Pas de repas supplémentaire.
+                          </p>
                         )}
                       </td>
                     </tr>
@@ -700,7 +725,7 @@ const GuestsList = ({ activeTab }) => {
                           <h4 className="presta-title">Prix :</h4>
                         </td>
                         <td>
-                          <p>
+                          <p className="white-text">
                             {Math.round(
                               guestFromStore?.price /
                                 (guestsFromGuestReducer.length
