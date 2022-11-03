@@ -1,4 +1,4 @@
-export { default as addGuestIcon } from "./add-guest.svg";
+export { default as addGuestIcon } from "./add-guest.png";
 export { default as burgerMenu } from "./burger-menu.svg";
 export { default as deleteTrash } from "./delete-trash.svg";
 export { default as flowerImg1 } from "./flower-img-1.svg";
