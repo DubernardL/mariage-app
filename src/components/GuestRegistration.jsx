@@ -501,39 +501,6 @@ const GuestsList = ({ activeTab }) => {
                     <tbody>
                       {guestsFromGuestReducer[index].firstName &&
                         guestsFromGuestReducer[index].lastName && (
-                          <tr>
-                            <td>Présence</td>
-                            <td>
-                              <input
-                                type="radio"
-                                value={"yes"}
-                                checked={
-                                  guestsFromGuestReducer[index].isPresent
-                                }
-                                onChange={(e) =>
-                                  handleChangeRadioMoreGuest(e, index)
-                                }
-                              />
-                              Oui
-                              <input
-                                type="radio"
-                                value={"no"}
-                                checked={
-                                  guestsFromGuestReducer[index].isPresent
-                                    ? !guestsFromGuestReducer[index].isPresent
-                                    : false
-                                }
-                                onChange={(e) =>
-                                  handleChangeRadioMoreGuest(e, index)
-                                }
-                              />
-                              Non
-                            </td>
-                          </tr>
-                        )}
-                      {guestsFromGuestReducer[index].firstName &&
-                        guestsFromGuestReducer[index].lastName &&
-                        guestsFromGuestReducer[index].isPresent && (
                           <>
                             <tr>
                               <td>Enfant</td>
@@ -636,7 +603,7 @@ const GuestsList = ({ activeTab }) => {
                   onClick={handleAddGuest}
                 >
                   <img
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: 30, height: 30, marginRight: 8 }}
                     src={addGuestIcon}
                     alt="add-guest-icon"
                   />
