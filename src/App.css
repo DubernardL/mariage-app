@@ -368,10 +368,8 @@ input {
   color: #fce6ed;
   background-color: transparent;
   margin: 0 0 0 0;
-  padding: 20px 20px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(222, 222, 222, 0.15);
 }
 
 .react-tabs {
@@ -503,6 +501,7 @@ tfoot {
   border-bottom: 1px solid rgba(222, 222, 222, 0.15);
   justify-content: space-between;
   align-items: center;
+  padding: 16px;
 }
 
 .nav-bar-container-disabled {
@@ -548,7 +547,7 @@ tfoot {
 
 .story-wrapper {
   align-items: flex-start;
-  background-color: #fce6ed;
+  background-color: #f5d2da;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -593,6 +592,10 @@ tfoot {
   .nav-bar-container {
     border-bottom: 1px solid rgba(222, 222, 222, 0.15);
     display: inline;
+  }
+
+  .burger-close {
+    padding-bottom: 42px;
   }
 
   .react-tabs__tab-list {

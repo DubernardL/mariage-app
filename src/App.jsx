@@ -62,22 +62,29 @@ const App = () => {
       >
         <div
           className={
-            activeTab === 3 ? "nav-bar-container-disabled" : "nav-bar-container"
+            activeTab === 3
+              ? "nav-bar-container-disabled"
+              : burgerMenuOpen
+              ? "nav-bar-container"
+              : "nav-bar-container burger-close"
           }
-          style={{ padding: 16, paddingBottom: burgerMenuOpen ? 16 : 42 }}
         >
-          <button
-            id="burger-menu-icon"
-            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            style={{
-              backgroundImage: `url(${burgerMenu})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              width: 30,
-              height: 30,
-              position: "absolute",
-            }}
-          />
+          <div>
+            <button
+              id="burger-menu-icon"
+              onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+              style={{
+                backgroundImage: `url(${burgerMenu})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                width: 30,
+                height: 30,
+                position: "absolute",
+                top: 16,
+                left: 16,
+              }}
+            />
+          </div>
           <TabList>
             <div
               ref={wrapperRef}
