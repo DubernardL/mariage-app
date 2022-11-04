@@ -159,13 +159,8 @@ const GuestsList = ({ activeTab }) => {
   return (
     <div className="informations-screen">
       <form
-        className="form undisplay-scroll"
+        className="form undisplay-scroll flowers-background"
         onSubmit={handleSubmit}
-        style={{
-          backgroundImage: `url(${cardBackground})`,
-          backgroundSize: "100%",
-          backgroundRepeat: "no-repeat",
-        }}
       >
         <Alert>
           <p className="white-text info-text">
@@ -188,7 +183,7 @@ const GuestsList = ({ activeTab }) => {
               <td>Email</td>
               <td>
                 <input
-                  type="text"
+                  type="email"
                   value={guestFromStore.email || ""}
                   onChange={(event) => {
                     dispatch(
@@ -468,37 +463,49 @@ const GuestsList = ({ activeTab }) => {
                   <div className="home-border" />
                 </div>
                 <div className="invit-card" key={index}>
-                  <div className="form-line">
-                    <label>Prénom</label>
-                    <input
-                      type="text"
-                      value={guestsFromGuestReducer[index].firstName || ""}
-                      onChange={(event) => {
-                        const newGuest = {
-                          ...guestsFromGuestReducer[index],
-                          from_email_guest: guestFromStore.email,
-                          isPresent: true,
-                          isChild: false,
-                          firstName: event.target.value,
-                        };
-                        dispatch(updateGuestsFromGuest(newGuest));
-                      }}
-                    />
-                    <label>Nom</label>
-                    <input
-                      type="text"
-                      value={guestsFromGuestReducer[index].lastName || ""}
-                      onChange={(event) => {
-                        const newGuest = {
-                          ...guestsFromGuestReducer[index],
-                          lastName: event.target.value,
-                        };
-                        dispatch(updateGuestsFromGuest(newGuest));
-                      }}
-                    />
-                  </div>
                   <table className="form-table">
                     <tbody>
+                      <>
+                        <tr>
+                          <td>Prénom</td>
+                          <td>
+                            <input
+                              type="text"
+                              value={
+                                guestsFromGuestReducer[index].firstName || ""
+                              }
+                              onChange={(event) => {
+                                const newGuest = {
+                                  ...guestsFromGuestReducer[index],
+                                  from_email_guest: guestFromStore.email,
+                                  isPresent: true,
+                                  isChild: false,
+                                  firstName: event.target.value,
+                                };
+                                dispatch(updateGuestsFromGuest(newGuest));
+                              }}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Nom</td>
+                          <td>
+                            <input
+                              type="text"
+                              value={
+                                guestsFromGuestReducer[index].lastName || ""
+                              }
+                              onChange={(event) => {
+                                const newGuest = {
+                                  ...guestsFromGuestReducer[index],
+                                  lastName: event.target.value,
+                                };
+                                dispatch(updateGuestsFromGuest(newGuest));
+                              }}
+                            />
+                          </td>
+                        </tr>
+                      </>
                       {guestsFromGuestReducer[index].firstName &&
                         guestsFromGuestReducer[index].lastName && (
                           <>
@@ -595,23 +602,6 @@ const GuestsList = ({ activeTab }) => {
           })}
         {validateEmail(guestFromStore.email) && (
           <>
-            {submitBtnDisplay() && guestFromStore.isPresent && (
-              <div>
-                <button
-                  type="button"
-                  id="add-guest-icon"
-                  onClick={handleAddGuest}
-                >
-                  <img
-                    style={{ width: 30, height: 30, marginRight: 8 }}
-                    src={addGuestIcon}
-                    alt="add-guest-icon"
-                  />
-                  Ajouter un invité
-                </button>
-              </div>
-            )}
-
             {guestFromStore.isPresent && (
               <div className="presta-table">
                 <h2
@@ -708,13 +698,32 @@ const GuestsList = ({ activeTab }) => {
                 </table>
               </div>
             )}
-            {submitBtnDisplay() && (
-              <div id="submit-btn-container">
-                <button id="submit-btn" type="submit">
+            <div className="form-btn-container">
+              {submitBtnDisplay() && guestFromStore.isPresent && (
+                <button
+                  type="button"
+                  className="submit-btn inverse"
+                  onClick={handleAddGuest}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    style={{ width: 25, height: 25, marginRight: 8 }}
+                    src={addGuestIcon}
+                    alt="add-guest-icon"
+                  />
+                  Ajouter un invité
+                </button>
+              )}
+              {submitBtnDisplay() && (
+                <button className="submit-btn" type="submit">
                   Enregistrer mes infos
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </>
         )}
       </form>

@@ -17,6 +17,7 @@ import {
   pacs,
   signaturesAppart,
   travaux,
+  filterBackgroundPhone,
 } from "../assets/images";
 
 const ASSETS = [
@@ -37,6 +38,7 @@ const ASSETS = [
   pacs,
   signaturesAppart,
   travaux,
+  filterBackgroundPhone,
 ];
 
 const preloadImage = (src) => {

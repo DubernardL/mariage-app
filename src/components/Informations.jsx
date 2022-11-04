@@ -4,21 +4,13 @@ import { useState } from "react";
 import Venue from "./infosTabs/Venue";
 import Nights from "./infosTabs/Nights";
 import Meals from "./infosTabs/Meals";
-import cardBackground from "../assets/images/storyTime/card-background.png";
 
 const Informations = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div className="informations-screen">
-      <div
-        className="informations-container"
-        style={{
-          backgroundImage: `url(${cardBackground})`,
-          backgroundSize: "100%",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className="informations-container flowers-background">
         <Tabs
           className="tabs-container"
           onSelect={(index, lastIndex, event) => {

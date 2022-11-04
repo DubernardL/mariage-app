@@ -29,7 +29,11 @@ const StoryTime = ({ onGoBackPressed }) => {
           height: 0,
         }}
       >
-        <button type="button" id="add-guest-icon" onClick={onGoBackPressed}>
+        <button
+          type="button"
+          onClick={onGoBackPressed}
+          style={{ backgroundColor: "transparent" }}
+        >
           <p
             style={{
               color: "white",
