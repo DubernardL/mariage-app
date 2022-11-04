@@ -19,18 +19,7 @@ export default function App() {
             ],
           },
         ]}
-        style={{
-          backgroundImage: `url(${filterScreen2PNG})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "50% 0%",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 100,
-        }}
+        className="paralax-filter"
       ></Plx>
       <Plx
         parallaxData={[

@@ -277,6 +277,12 @@ label {
   overflow: hidden;
 }
 
+.flowers-background {
+  background-image: url("./assets/images/storyTime/card-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 .tabs-container {
   padding: 0px 5%;
 }
@@ -325,32 +331,34 @@ input {
   background-color: transparent;
 }
 
-#add-guest-icon {
-  font-family: "Title-font";
+.form-btn-container {
   display: flex;
-  background-color: #f5b3c1;
+  width: 100%;
   align-items: center;
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
-  margin-top: 16px;
+  justify-content: center;
 }
 
-#submit-btn-container {
+.submit-btn-container {
   display: flex;
   justify-content: center;
   align-self: center;
 }
 
-#submit-btn {
+.submit-btn {
+  margin: 0 8px;
   font-family: "Title-font";
   font-size: 18px;
   padding: 8px 16px;
   background-color: #c32f5d;
   border-radius: 10px;
   border: 4px solid #c32f5d;
-  color: white;
+  color: #fce6ed;
+}
+
+.inverse {
+  background-color: white;
+  border: 4px solid white;
+  color: #c32f5d;
 }
 
 .tab-list {
@@ -437,6 +445,7 @@ input {
 
 .form-table {
   border: none;
+  padding: 16px;
 }
 
 table,
@@ -490,7 +499,7 @@ tfoot {
 .react-tabs {
   background: linear-gradient(
     0.08turn,
-    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0.5) 100%
   );
 }
@@ -520,6 +529,19 @@ tfoot {
 /* Alert END  */
 
 /* Story START */
+.paralax-filter {
+  background-image: url("./assets/images/storyTime/contour-ecran-02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
 .StickyText {
   margin-left: 20px;
 }
@@ -760,11 +782,23 @@ tfoot {
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
+  .paralax-filter {
+    background-image: url("./assets/images/storyTime/contour-ecran-phone-multi.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90% 0%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
   label {
     font-family: "Title-font";
     color: rgb(74, 55, 61);
     font-size: 20px;
-    font-weight: 600;
   }
 
   p {
@@ -782,6 +816,12 @@ tfoot {
 
   .home-title-small {
     font-size: 30px;
+  }
+
+  .flowers-background {
+    background-image: url("./assets/images/storyTime/card-background-phone.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
   .infos-tabs {
@@ -820,14 +860,18 @@ tfoot {
     max-height: 80vh;
   }
 
-  .form-line {
+  .form-btn-container {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    margin: 12px 0;
+  }
+
+  .inverse {
+    margin-bottom: 16px;
   }
 
   .invit-card {
-    padding: 20px 0px;
+    padding: 20px 10px;
   }
 
   .invit-card-container {

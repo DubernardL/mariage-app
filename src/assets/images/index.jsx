@@ -12,9 +12,11 @@ export const photoPiscine = require("./photos/photo_piscine.jpeg");
 
 export { default as filterScreen } from "./storyTime/contour-ecran-01.svg";
 export { default as filterScreen2 } from "./storyTime/contour-ecran-02.svg";
+export { default as filterScreenPhone } from "./storyTime/contour-ecran-phone.svg";
 export const cardBackground = require("./storyTime/card-background.png");
 export const filterScreen2PNG = require("./storyTime/contour-ecran-02.png");
 export const jeune = require("./storyTime/jeune.jpeg");
 export const pacs = require("./storyTime/pacs.jpeg");
 export const signaturesAppart = require("./storyTime/signature-appart.jpeg");
 export const travaux = require("./storyTime/travaux.jpeg");
+export const filterBackgroundPhone = require("./storyTime/contour-ecran-phone-multi.png");
