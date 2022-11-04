@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e44db06b.css",
-    "main.js": "/static/js/main.9eb8f2d0.js",
-    "static/media/home_img_1.jpeg": "/static/media/home_img_1.5e5be04af21943a1eb34.jpeg",
+    "main.css": "/static/css/main.e11a2ae5.css",
+    "main.js": "/static/js/main.26a99788.js",
+    "static/media/home_img_1.jpeg": "/static/media/home_img_1.8d87b218214b47c74f8d.jpeg",
     "static/media/travaux.jpeg": "/static/media/travaux.1335c4adb014b22906d6.jpeg",
     "static/media/signature-appart.jpeg": "/static/media/signature-appart.566c363d0b239a4e7920.jpeg",
     "static/media/pacs.jpeg": "/static/media/pacs.4ab9abe59e4b6492624a.jpeg",
     "static/media/CormorantGaramond-Regular.ttf": "/static/media/CormorantGaramond-Regular.e1f2c50eda29fd294be2.ttf",
     "static/media/card-background.png": "/static/media/card-background.ca6f13d3f056b7e3cb9b.png",
+    "static/media/contour-ecran-phone.svg": "/static/media/contour-ecran-phone.0426096265c1133e965093e7cd12a695.svg",
     "static/media/jeune.jpeg": "/static/media/jeune.9c9c0cb702a3465ca4eb.jpeg",
+    "static/media/card-background-phone.png": "/static/media/card-background-phone.9100a7a27711b233b145.png",
     "static/media/contour-ecran-01.svg": "/static/media/contour-ecran-01.5f2a26312427d5c05d025d74cf9cae9d.svg",
     "static/media/contour-ecran-02.svg": "/static/media/contour-ecran-02.a5f0f9bed5b64ef0992394f4677fdf82.svg",
     "static/media/contour-ecran-02.png": "/static/media/contour-ecran-02.f748e2340d24c964be03.png",
+    "static/media/contour-ecran-phone-multi.png": "/static/media/contour-ecran-phone-multi.839034dc09edd107602b.png",
     "static/media/flower-img-1.svg": "/static/media/flower-img-1.59a2bf69008e2140ff87ae48a5c20785.svg",
     "static/media/flower-img-2.svg": "/static/media/flower-img-2.b6c64ab3a9f35fe087bc40a4a9fe1c96.svg",
     "static/media/photo_piscine.jpeg": "/static/media/photo_piscine.136c5ba17f945d379826.jpeg",
@@ -22,11 +25,11 @@
     "static/media/delete-trash.svg": "/static/media/delete-trash.6f42fa5eca4af89bba6f1c0af2db6439.svg",
     "index.html": "/index.html",
     "static/media/burger-menu.svg": "/static/media/burger-menu.2b3a946c909dda0853eb150c3b772a28.svg",
-    "main.e44db06b.css.map": "/static/css/main.e44db06b.css.map",
-    "main.9eb8f2d0.js.map": "/static/js/main.9eb8f2d0.js.map"
+    "main.e11a2ae5.css.map": "/static/css/main.e11a2ae5.css.map",
+    "main.26a99788.js.map": "/static/js/main.26a99788.js.map"
   },
   "entrypoints": [
-    "static/css/main.e44db06b.css",
-    "static/js/main.9eb8f2d0.js"
+    "static/css/main.e11a2ae5.css",
+    "static/js/main.26a99788.js"
   ]
 }
