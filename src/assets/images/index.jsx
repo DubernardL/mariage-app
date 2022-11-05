@@ -9,6 +9,7 @@ export const venuImg = require("./photos/photo_1.jpeg");
 export const photoBedroom = require("./photos/photo_bedroom.jpeg");
 export const photoDortoires = require("./photos/photo_dortoires.jpeg");
 export const photoPiscine = require("./photos/photo_piscine.jpeg");
+export const bye = require("./photos/bye.jpg");
 
 export { default as filterScreen } from "./storyTime/contour-ecran-01.svg";
 export { default as filterScreen2 } from "./storyTime/contour-ecran-02.svg";
@@ -20,3 +21,13 @@ export const pacs = require("./storyTime/pacs.jpeg");
 export const signaturesAppart = require("./storyTime/signature-appart.jpeg");
 export const travaux = require("./storyTime/travaux.jpeg");
 export const filterBackgroundPhone = require("./storyTime/contour-ecran-phone-multi.png");
+export const photo1 = require("./storyTime/photo1.jpg");
+
+export const carousel1 = require("./carousel/carousel-1.jpg");
+export const carousel2 = require("./carousel/carousel-2.jpg");
+export const carousel3 = require("./carousel/carousel-3.jpg");
+export const carousel4 = require("./carousel/carousel-4.jpg");
+export const carousel5 = require("./carousel/carousel-5.jpg");
+export const carousel6 = require("./carousel/carousel-6.jpg");
+export const carousel7 = require("./carousel/carousel-7.jpg");
+export const carousel8 = require("./carousel/carousel-8.jpg");
