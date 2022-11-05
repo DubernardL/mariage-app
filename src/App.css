@@ -578,7 +578,7 @@ tfoot {
 .section-container {
   display: flex;
   z-index: 0;
-  margin-bottom: 30vh;
+  margin-bottom: 10vh;
 }
 
 .inner-text {
@@ -592,6 +592,35 @@ tfoot {
 .inner-text-left {
   margin-right: 20%;
 }
+
+.carousel-container {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.carousel-img-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carousel-root {
+  z-index: 999;
+}
+
+.endingText {
+  font-family: "Great Vibes", cursive;
+  color: #fce6ed;
+  margin: 0px;
+  font-size: 90px;
+  margin-top: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  left: 0px;
+  z-index: 999;
+}
+
 /* Story END */
 
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */

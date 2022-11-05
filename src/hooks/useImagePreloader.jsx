@@ -18,6 +18,16 @@ import {
   signaturesAppart,
   travaux,
   filterBackgroundPhone,
+  photo1,
+  carousel1,
+  carousel2,
+  carousel3,
+  carousel4,
+  carousel5,
+  carousel6,
+  carousel7,
+  carousel8,
+  bye,
 } from "../assets/images";
 
 const ASSETS = [
@@ -39,6 +49,16 @@ const ASSETS = [
   signaturesAppart,
   travaux,
   filterBackgroundPhone,
+  photo1,
+  carousel1,
+  carousel2,
+  carousel3,
+  carousel4,
+  carousel5,
+  carousel6,
+  carousel7,
+  carousel8,
+  bye,
 ];
 
 const preloadImage = (src) => {

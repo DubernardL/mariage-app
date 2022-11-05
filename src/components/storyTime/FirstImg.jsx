@@ -1,5 +1,4 @@
 import Plx from "react-plx";
-import { filterScreen2PNG } from "../../assets/images";
 
 export default function App() {
   return (

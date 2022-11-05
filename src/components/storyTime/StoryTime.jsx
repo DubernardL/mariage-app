@@ -1,8 +1,28 @@
 import React, { useEffect, useState } from "react";
 import FirstImg from "./FirstImg";
 import Plx from "react-plx";
-import { jeune, travaux } from "../../assets/images";
-import { translateXParallax, blurParallax } from "../../helpers/parallax";
+import { Carousel } from "react-responsive-carousel";
+import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import {
+  jeune,
+  pacs,
+  travaux,
+  photo1,
+  carousel1,
+  carousel2,
+  carousel3,
+  carousel4,
+  carousel5,
+  carousel6,
+  carousel7,
+  carousel8,
+  bye,
+} from "../../assets/images";
+import {
+  translateXParallax,
+  blurParallax,
+  backgroundTranslation,
+} from "../../helpers/parallax";
 
 const StoryTime = ({ onGoBackPressed }) => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -131,7 +151,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   screenWidth > 900 ? screenWidth * 0.15 : -50,
                   screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.15,
                   1500,
-                  2700
+                  2500
                 )}
               >
                 <p className="inner-text inner-text-left">
@@ -153,12 +173,182 @@ const StoryTime = ({ onGoBackPressed }) => {
                 parallaxData={translateXParallax(
                   screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
                   screenWidth > 900 ? 100 : screenWidth * 0.2,
-                  1500,
-                  2700
+                  1300,
+                  2300
                 )}
               >
-                <img className="story-img" src={travaux} alt="foreground" />
+                <img
+                  className="story-img"
+                  style={{ width: "40%", height: "auto" }}
+                  src={pacs}
+                  alt="foreground"
+                />
               </Plx>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                position: "relative",
+                marginTop: 0,
+                height: 700,
+                width: "100%",
+                overflow: "hidden",
+                alignItems: "center",
+                justifyContent: "center",
+                overflowX: "hidden",
+              }}
+            >
+              <Plx
+                style={{
+                  width: "80%",
+                  height: 900,
+                  backgroundColor: "red",
+                  position: "absolute",
+                  top: 0,
+                  background: `url(${photo1}) no-repeat`,
+                  backgroundSize: "cover",
+                }}
+                parallaxData={backgroundTranslation()}
+              />
+              <Plx
+                style={{
+                  width: "80%",
+                  display: "flex",
+                }}
+                parallaxData={[
+                  {
+                    start: 1500,
+                    end: 2800,
+                    properties: [
+                      {
+                        startValue: 0,
+                        endValue: 1,
+                        property: "opacity",
+                      },
+                    ],
+                  },
+                ]}
+              >
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: 30,
+                    textAlign: "left",
+                    paddingLeft: "5%",
+                    paddingRight: "50%",
+                  }}
+                >
+                  Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Eligendi magnam sapiente provident odit
+                  voluptates sunt, nesciunt iste nostrum quod laudantium quo a
+                  adipisci sint, atque velit autem cumque rem distinctio!
+                </p>
+              </Plx>
+            </div>
+            <div
+              className="carousel-container"
+              style={{
+                width: "100%",
+                zIndex: 999,
+                backgroundColor: "#f5d2da",
+              }}
+            >
+              <Carousel
+                showArrows={true}
+                autoPlay={false}
+                stopOnHover={true}
+                infiniteLoop={true}
+                transitionTime={1000}
+                showStatus={false}
+                centerMode={true}
+                showThumbs={false}
+                // renderArrowPrev={() => <p style={{ color: "white" }}>PREV</p>}
+                // renderArrowNext={() => <p style={{ color: "white" }}>NEXT</p>}
+              >
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel1}
+                    alt={"carousel1"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel2}
+                    alt={"carousel2"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel3}
+                    alt={"carousel3"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel4}
+                    alt={"carousel4"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel5}
+                    alt={"carousel5"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel6}
+                    alt={"carousel6"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel7}
+                    alt={"carousel7"}
+                  />
+                </div>
+                <div className="carousel-img-container">
+                  <img
+                    className="carousel-img"
+                    src={carousel8}
+                    alt={"carousel8"}
+                  />
+                </div>
+              </Carousel>
+            </div>
+            <div
+              style={{
+                marginTop: "5%",
+                zIndex: 997,
+                position: "relative",
+              }}
+            >
+              <img
+                src={bye}
+                style={{
+                  width: "100%",
+                }}
+                alt={"bye"}
+              />
+              <div
+                style={{
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 998,
+                  position: "absolute",
+                  background: `linear-gradient(to top,  rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%)`,
+                }}
+              />
+              <p className="endingText">On est préssé de vous voir ...</p>
             </div>
           </div>
         </div>

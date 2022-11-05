@@ -45,3 +45,19 @@ export const blurParallax = () => {
     },
   ];
 };
+
+export const backgroundTranslation = () => {
+  return [
+    {
+      start: 1500,
+      end: 3800,
+      properties: [
+        {
+          startValue: -450,
+          endValue: 0,
+          property: "translateY",
+        },
+      ],
+    },
+  ];
+};

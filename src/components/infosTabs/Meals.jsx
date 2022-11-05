@@ -9,7 +9,7 @@ const Meals = () => {
             En ce qui concerne les repas du vendredi soir, samedi midi et
             dimanche soir, nous vous proposons de festoyer et de trinquer tous
             ensemble autour de bons repas cuisinés par le traiteur moyennant{" "}
-            <b>15€ par personne et par repas</b>.
+            <b>15€ par personne et par repas</b> (gratuit pour les enfants).
             <br />
             <br />
             N.B : Vous pourrez indiquer si vous souhaitez manger sur le domaine
