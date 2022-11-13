@@ -20,6 +20,7 @@ export const jeune = require("./storyTime/jeune.jpeg");
 export const pacs = require("./storyTime/pacs.jpeg");
 export const signaturesAppart = require("./storyTime/signature-appart.jpeg");
 export const travaux = require("./storyTime/travaux.jpeg");
+export const travauxAndAppart = require("./storyTime/travaux-and-appart.png");
 export const filterBackgroundPhone = require("./storyTime/contour-ecran-phone-multi.png");
 export const photo1 = require("./storyTime/photo1.jpg");
 

@@ -28,6 +28,7 @@ import {
   carousel7,
   carousel8,
   bye,
+  travauxAndAppart,
 } from "../assets/images";
 
 const ASSETS = [
@@ -59,6 +60,7 @@ const ASSETS = [
   carousel7,
   carousel8,
   bye,
+  travauxAndAppart,
 ];
 
 const preloadImage = (src) => {

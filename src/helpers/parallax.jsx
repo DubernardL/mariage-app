@@ -2,12 +2,13 @@ export const translateXParallax = (
   startValue,
   endValue,
   scrollStart,
-  scrollEnd
+  scrollEnd,
+  duration = 1000
 ) => {
   return [
     {
       start: scrollStart,
-      duration: 1000,
+      duration: duration,
       properties: [
         {
           startValue: startValue,
@@ -18,7 +19,7 @@ export const translateXParallax = (
     },
     {
       start: scrollEnd,
-      duration: 1000,
+      duration: duration,
       properties: [
         {
           startValue: endValue,
