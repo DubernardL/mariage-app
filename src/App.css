@@ -567,6 +567,15 @@ tfoot {
   height: auto;
 }
 
+.pacs-img {
+  width: "40%";
+}
+
+.travaux-img {
+  width: 70%;
+  height: auto;
+}
+
 .story-wrapper {
   align-items: flex-start;
   background-color: #f5d2da;
@@ -582,28 +591,16 @@ tfoot {
 }
 
 .inner-text {
+  font-family: "Title-font";
   color: white;
   text-align: left;
   width: 70%;
-  font-size: 22;
+  font-size: 24px;
   line-height: 30px;
 }
 
 .inner-text-left {
   margin-right: 20%;
-}
-
-.carousel-container {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-.carousel-img-container {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.carousel-root {
-  z-index: 999;
 }
 
 .endingText {
@@ -621,7 +618,87 @@ tfoot {
   z-index: 999;
 }
 
+.text-on-img-container {
+  padding-left: 5%;
+  padding-right: 50%;
+}
+
+.text-on-img {
+  color: white;
+  font-size: 30px;
+  text-align: left;
+  padding: 10px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
 /* Story END */
+
+/* CAROUSEL START */
+.carousel-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.carousel-img-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carousel-root {
+  z-index: 999;
+}
+
+.carousel.carousel-slider {
+  overflow: inherit;
+}
+
+.carousel .control-next.control-arrow::before {
+  border-left: none !important;
+}
+
+.carousel .control-arrow::before,
+.carousel.carousel-slider .control-arrow::before {
+  border-top: none !important;
+  border-bottom: 8px solid #fff !important;
+}
+
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  opacity: 1;
+}
+
+.carousel.carousel-slider .control-arrow {
+  padding: 2% !important;
+}
+
+.carousel .control-next.control-arrow:before {
+  content: "";
+  border: solid white;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 14px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel .control-prev.control-arrow:before {
+  content: "";
+  border: solid white;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 16px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  opacity: 0.5;
+}
+/* CAROUSEL END */
 
 /* If the screen size is 900px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 900px) {
@@ -752,6 +829,16 @@ tfoot {
     margin-left: 20px;
   }
 
+  .story-img {
+    width: 80%;
+    height: auto;
+  }
+
+  .travaux-img {
+    width: 90%;
+    height: auto;
+  }
+
   .story-text-intro-container {
     display: flex;
     width: 100%;
@@ -768,11 +855,6 @@ tfoot {
     margin: 0 10%;
   }
 
-  .story-img {
-    width: 80%;
-    height: auto;
-  }
-
   .story-wrapper {
     align-items: flex-start;
     background-color: #f5b3c1;
@@ -782,10 +864,7 @@ tfoot {
   }
 
   .section-container {
-    display: flex;
     flex-direction: column;
-    z-index: 0;
-    margin-bottom: 20vh;
   }
 
   .column-reverse {
@@ -799,6 +878,43 @@ tfoot {
     font-size: 22;
     line-height: 30px;
     margin: 30px 0;
+    text-align: justify;
+  }
+
+  .carousel-container {
+    margin-bottom: 80px;
+  }
+
+  .endingText {
+    font-family: "Great Vibes", cursive;
+    color: #fce6ed;
+    margin: 0px;
+    font-size: 50px;
+    line-height: 40px;
+    margin-top: 0px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 5%;
+    left: 0px;
+    z-index: 999;
+  }
+
+  .text-on-img {
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 20px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+
+  .text-on-img-mobile {
+    margin-bottom: 100px;
+    z-index: 999;
   }
   /* Story END */
 
@@ -807,6 +923,13 @@ tfoot {
     line-height: 26px;
     letter-spacing: 1px;
   }
+
+  /* CAROUSEL START */
+  .carousel-img-container {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  /* CAROUSEL END */
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */

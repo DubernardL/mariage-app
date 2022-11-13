@@ -6,7 +6,7 @@ import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.
 import {
   jeune,
   pacs,
-  travaux,
+  travauxAndAppart,
   photo1,
   carousel1,
   carousel2,
@@ -98,10 +98,10 @@ const StoryTime = ({ onGoBackPressed }) => {
                   alignItems: "center",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? 0 : -50,
-                  screenWidth > 900 ? screenWidth * 0.25 : screenWidth * 0.1,
-                  800,
-                  1800
+                  screenWidth > 600 ? 0 : -50,
+                  screenWidth > 600 ? screenWidth * 0.25 : screenWidth * 0.1,
+                  screenWidth > 600 ? 800 : 400,
+                  screenWidth > 600 ? 1800 : 1600
                 )}
               >
                 <img className="story-img" src={jeune} alt="foreground" />
@@ -114,14 +114,22 @@ const StoryTime = ({ onGoBackPressed }) => {
                   justifyContent: "flex-start",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
-                  screenWidth > 900 ? 50 : screenWidth * 0.1,
-                  800,
-                  1800
+                  screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 1,
+                  screenWidth > 600 ? 50 : screenWidth * 0.1,
+                  screenWidth > 600 ? 800 : 600,
+                  screenWidth > 600 ? 1800 : 1800
                 )}
               >
                 <p className="inner-text">
-                  Avec Lucas on s’est rencontré en classe de Première au Lycée
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
+                  delectus cupiditate. Assumenda nesciunt, quaerat animi
+                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
+                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
+                  quisquam incidunt repellendus voluptatem, ea facere
+                  temporibus, error obcaecati et illo?
+                  {/* Avec Lucas on s’est rencontré en classe de Première au Lycée
                   Jean-Pierre Timbaud de Brétigny-sur-Orge (sisi 91 RPZ!) en
                   2010. Autrement dit il y a déjà quelques années. Dès le début,
                   on s’est super bien entendus, on est devenu très copains au
@@ -135,7 +143,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   L’année suivante, en Terminale, toujours dans la même classe
                   et toujours super copains. Mais avec la fin du lycée, le
                   déménagement de Lucas à Bordeaux, on s’est perdu de vue
-                  pendant quelques années.
+                  pendant quelques années. */}
                 </p>
               </Plx>
             </div>
@@ -148,19 +156,27 @@ const StoryTime = ({ onGoBackPressed }) => {
                   alignItems: "center",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? screenWidth * 0.15 : -50,
-                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.15,
-                  1500,
-                  2500
+                  screenWidth > 600 ? screenWidth * 0.15 : -50,
+                  screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 0.2,
+                  screenWidth > 600 ? 1500 : 1600,
+                  screenWidth > 600 ? 2500 : 2800
                 )}
               >
                 <p className="inner-text inner-text-left">
-                  Cinq années après le lycée on se retrouve un été à Brétigny,
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
+                  delectus cupiditate. Assumenda nesciunt, quaerat animi
+                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
+                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
+                  quisquam incidunt repellendus voluptatem, ea facere
+                  temporibus, error obcaecati et illo?
+                  {/* Cinq années après le lycée on se retrouve un été à Brétigny,
                   pour ne plus jamais se quitter : j’ai rapidement ma mutation
                   pour qu’on puisse s’installer ensemble, entre-temps on se
                   pacse, on achète un appart qu’on retape totalement avec les
                   parents de Lucas (Nadia et Fred, MERCI!) et maintenant on se
-                  marie !
+                  marie ! */}
                 </p>
               </Plx>
               <Plx
@@ -171,80 +187,123 @@ const StoryTime = ({ onGoBackPressed }) => {
                   justifyContent: "flex-start",
                 }}
                 parallaxData={translateXParallax(
-                  screenWidth > 900 ? screenWidth * 0.15 : screenWidth * 0.8,
-                  screenWidth > 900 ? 100 : screenWidth * 0.2,
-                  1300,
-                  2300
+                  screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 0.8,
+                  screenWidth > 600 ? 100 : screenWidth * 0.15,
+                  screenWidth > 600 ? 1300 : 1400,
+                  screenWidth > 600 ? 2300 : 2600
                 )}
               >
                 <img
-                  className="story-img"
-                  style={{ width: "40%", height: "auto" }}
+                  className="story-img pacs-img"
                   src={pacs}
                   alt="foreground"
                 />
               </Plx>
             </div>
-            <div
-              style={{
-                display: "flex",
-                position: "relative",
-                marginTop: 0,
-                height: 700,
-                width: "100%",
-                overflow: "hidden",
-                alignItems: "center",
-                justifyContent: "center",
-                overflowX: "hidden",
-              }}
-            >
+
+            <div className="section-container">
               <Plx
                 style={{
-                  width: "80%",
-                  height: 900,
-                  backgroundColor: "red",
-                  position: "absolute",
-                  top: 0,
-                  background: `url(${photo1}) no-repeat`,
-                  backgroundSize: "cover",
-                }}
-                parallaxData={backgroundTranslation()}
-              />
-              <Plx
-                style={{
-                  width: "80%",
                   display: "flex",
+                  flex: 1,
+                  alignItems: "center",
                 }}
-                parallaxData={[
-                  {
-                    start: 1500,
-                    end: 2800,
-                    properties: [
-                      {
-                        startValue: 0,
-                        endValue: 1,
-                        property: "opacity",
-                      },
-                    ],
-                  },
-                ]}
+                parallaxData={translateXParallax(
+                  screenWidth > 600 ? 0 : -50,
+                  screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 0.05,
+                  screenWidth > 600 ? 1700 : 2400,
+                  screenWidth > 600 ? 2700 : 3600
+                )}
               >
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: 30,
-                    textAlign: "left",
-                    paddingLeft: "5%",
-                    paddingRight: "50%",
-                  }}
-                >
-                  Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
-                  adipisicing elit. Eligendi magnam sapiente provident odit
-                  voluptates sunt, nesciunt iste nostrum quod laudantium quo a
-                  adipisci sint, atque velit autem cumque rem distinctio!
+                <img
+                  className="travaux-img"
+                  src={travauxAndAppart}
+                  alt="foreground"
+                />
+              </Plx>
+              <Plx
+                style={{
+                  display: "flex",
+                  flex: 1,
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                }}
+                parallaxData={translateXParallax(
+                  screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 0.8,
+                  screenWidth > 600 ? 50 : screenWidth * 0.1,
+                  screenWidth > 600 ? 1700 : 2600,
+                  screenWidth > 600 ? 2700 : 3800
+                )}
+              >
+                <p className="inner-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
+                  delectus cupiditate. Assumenda nesciunt, quaerat animi
+                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
+                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
+                  quisquam incidunt repellendus voluptatem, ea facere
+                  temporibus, error obcaecati et illo?
                 </p>
               </Plx>
             </div>
+
+            {screenWidth > 600 && (
+              <div
+                style={{
+                  display: "flex",
+                  position: "relative",
+                  marginTop: 0,
+                  height: 700,
+                  width: "100%",
+                  overflow: "hidden",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflowX: "hidden",
+                }}
+              >
+                <Plx
+                  style={{
+                    width: "80%",
+                    height: 900,
+                    position: "absolute",
+                    top: 0,
+                    background: `url(${photo1}) no-repeat`,
+                    backgroundSize: "cover",
+                  }}
+                  parallaxData={backgroundTranslation()}
+                />
+                <Plx
+                  style={{
+                    width: "80%",
+                    display: "flex",
+                  }}
+                  parallaxData={[
+                    {
+                      start: 1500,
+                      end: 2800,
+                      properties: [
+                        {
+                          startValue: 0,
+                          endValue: 1,
+                          property: "opacity",
+                        },
+                      ],
+                    },
+                  ]}
+                >
+                  <div className="text-on-img-container">
+                    <p className="text-on-img">
+                      Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
+                      adipisicing elit. Eligendi magnam sapiente provident odit
+                      voluptates sunt, nesciunt iste nostrum quod laudantium quo
+                      a adipisci sint, atque velit autem cumque rem distinctio!
+                    </p>
+                  </div>
+                </Plx>
+              </div>
+            )}
+
             <div
               className="carousel-container"
               style={{
@@ -256,14 +315,14 @@ const StoryTime = ({ onGoBackPressed }) => {
               <Carousel
                 showArrows={true}
                 autoPlay={false}
-                stopOnHover={true}
                 infiniteLoop={true}
                 transitionTime={1000}
                 showStatus={false}
                 centerMode={true}
+                centerSlidePercentage={screenWidth <= 900 ? "90" : "70"}
                 showThumbs={false}
-                // renderArrowPrev={() => <p style={{ color: "white" }}>PREV</p>}
-                // renderArrowNext={() => <p style={{ color: "white" }}>NEXT</p>}
+                swipeable={true}
+                swipeScrollTolerance={10}
               >
                 <div className="carousel-img-container">
                   <img
@@ -323,9 +382,18 @@ const StoryTime = ({ onGoBackPressed }) => {
                 </div>
               </Carousel>
             </div>
+
+            {screenWidth <= 900 && (
+              <p className="text-on-img text-on-img-mobile">
+                Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Eligendi magnam sapiente provident odit
+                voluptates sunt, nesciunt iste nostrum quod laudantium quo a
+                adipisci sint, atque velit autem cumque rem distinctio!
+              </p>
+            )}
+
             <div
               style={{
-                marginTop: "5%",
                 zIndex: 997,
                 position: "relative",
               }}
@@ -348,7 +416,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   background: `linear-gradient(to top,  rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%)`,
                 }}
               />
-              <p className="endingText">On est préssé de vous voir ...</p>
+              <p className="endingText">On est pressé de vous voir ...</p>
             </div>
           </div>
         </div>
