@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -18,12 +18,12 @@ import { getGuest, updateGuestStore } from "../store/guestsReducer";
 import { deleteTrash, addGuestIcon, flowerImg1 } from "../assets/images";
 import { getGuestPrice } from "../helpers/price";
 import Alert from "./Alert";
-import cardBackground from "../assets/images/storyTime/card-background.png";
 
 const GuestsList = ({ activeTab }) => {
   const dispatch = useDispatch();
   const guestFromStore = useSelector(getGuest);
   const guestsFromGuestReducer = useSelector(getConsultationFields);
+  const [infosIsPresent, setInfosIsPresent] = useState(true);
 
   useEffect(() => {
     const newPrice = getGuestPrice();
@@ -162,20 +162,40 @@ const GuestsList = ({ activeTab }) => {
         className="form undisplay-scroll flowers-background"
         onSubmit={handleSubmit}
       >
-        <Alert>
-          <p className="white-text info-text">
-            Vous avez jusqu'au <b>22/02/2023</b> pour répondre à l'invitation ou
-            modifier vos informations.
-            <br />
-            <p className="white-text info-text" style={{ textIndent: 15 }}>
-              - Si vous êtes déjà enregistré, entrez votre email pour modifier
-              vos informations.
+        <Alert
+          onPress={() => setInfosIsPresent(!infosIsPresent)}
+          closed={!infosIsPresent}
+        >
+          {infosIsPresent ? (
+            <p className="white-text info-text">
+              Vous avez jusqu'au <b>22/02/2023</b> pour répondre à l'invitation
+              ou modifier vos informations.
+              <br />
+              <p className="white-text info-text" style={{ textIndent: 15 }}>
+                - Si vous êtes déjà enregistré, entrez votre email pour modifier
+                vos informations.
+              </p>
+              <p className="white-text info-text" style={{ textIndent: 15 }}>
+                - Si vous n'êtes pas encore enregistré, renseignez un email et
+                vos informations.
+              </p>
+              <p className="white-text info-text" style={{ textIndent: 15 }}>
+                - A la fin de l'inscription un tarif à titre indicatif vous sera
+                communiqué. Nous vous recontacterons par email pour vous
+                confirmer le tarif définitif et les modalités de paiement.
+              </p>
             </p>
-            <p className="white-text info-text" style={{ textIndent: 15 }}>
-              - Si vous n'êtes pas encore enregistré, renseignez un email et vos
-              informations.
-            </p>
-          </p>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setInfosIsPresent(!infosIsPresent)}
+              style={{
+                backgroundColor: "transparent",
+              }}
+            >
+              <p className="white-text info-text">Voir les infos</p>
+            </button>
+          )}
         </Alert>
         <table className="form-table">
           <tbody>

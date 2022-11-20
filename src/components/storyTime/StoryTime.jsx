@@ -17,6 +17,7 @@ import {
   carousel7,
   carousel8,
   bye,
+  backArrow,
 } from "../../assets/images";
 import {
   translateXParallax,
@@ -46,25 +47,27 @@ const StoryTime = ({ onGoBackPressed }) => {
           zIndex: 999,
           position: "sticky",
           top: 20,
+          left: 20,
           height: 0,
         }}
       >
         <button
           type="button"
           onClick={onGoBackPressed}
-          style={{ backgroundColor: "transparent" }}
+          style={{
+            backgroundColor: "transparent",
+          }}
         >
-          <p
-            style={{
-              color: "white",
-              fontSize: 20,
-              fontWeight: "bold",
-              marginLeft: 20,
-              textTransform: "uppercase",
-            }}
-          >
-            Retour
-          </p>
+          <img
+            className="story-img"
+            style={
+              screenWidth <= 900
+                ? { width: 40, height: 40 }
+                : { width: 70, height: 70 }
+            }
+            src={backArrow}
+            alt="foreground"
+          />
         </button>
       </div>
       <div
@@ -84,9 +87,9 @@ const StoryTime = ({ onGoBackPressed }) => {
             <div className="story-text-intro-container">
               <Plx parallaxData={blurParallax()}>
                 <p className="story-text-intro">
-                  Le 22 avril 2023, nous allons nous dire « Oui » devant tous
-                  nos proches ! Pour ceux qui ne sont pas à nos côtés depuis des
-                  années, voici comment tout a commencé…
+                  Le 22 avril 2023, nous allons nous dire « Oui » devant vous !
+                  Pour ceux qui ne sont pas à nos côtés depuis des années, voici
+                  un petit aperçu de notre vie …
                 </p>
               </Plx>
             </div>
@@ -121,29 +124,16 @@ const StoryTime = ({ onGoBackPressed }) => {
                 )}
               >
                 <p className="inner-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
-                  delectus cupiditate. Assumenda nesciunt, quaerat animi
-                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
-                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
-                  quisquam incidunt repellendus voluptatem, ea facere
-                  temporibus, error obcaecati et illo?
-                  {/* Avec Lucas on s’est rencontré en classe de Première au Lycée
-                  Jean-Pierre Timbaud de Brétigny-sur-Orge (sisi 91 RPZ!) en
-                  2010. Autrement dit il y a déjà quelques années. Dès le début,
-                  on s’est super bien entendus, on est devenu très copains au
-                  point de faire notre TPE ensemble (sur les Gueules Cassées.
-                  J’avais choisi ce sujet. Lucas m’en veut encore. Et Amandine
-                  aussi d’ailleurs. Désolée. Mais bon Lucas foutait rien, c’est
-                  ma mère qui a bossé pour lui quand même). On a, à de très
-                  rares occasions, séché les cours pour être ensemble. Au lieu
-                  de préparer le TPE, on allait regarder Charmed, c’était
-                  marrant (désolée Papa, Maman, c’est Lucas qui me forçait).
-                  L’année suivante, en Terminale, toujours dans la même classe
-                  et toujours super copains. Mais avec la fin du lycée, le
-                  déménagement de Lucas à Bordeaux, on s’est perdu de vue
-                  pendant quelques années. */}
+                  Avec Lucas on s'est rencontrés en 1ère au Lycée Jean-Pierre
+                  Timbaud à Brétigny-sur-Orge (sisi 91 RPZ!) en 2010. On est
+                  très vite devenus amis au point de faire notre TPE (travail de
+                  groupe à faire pour le bac) ensemble avec Amandine. C'est moi
+                  qui ai choisi le sujet : "les gueules cassées" (Lucas m'en
+                  veut encore pour ce choix. D'ailleurs il a rien foutu c'est ma
+                  mère qui a fait tout le boulot). Bref, nous avons passés notre
+                  1ère et notre Terminale ensemble. A la fin du lycée Lucas
+                  déménage à Bordeaux pour suivre ses parents et faire ses
+                  études. Là on se perd de vue pendant quelques années.
                 </p>
               </Plx>
             </div>
@@ -163,20 +153,16 @@ const StoryTime = ({ onGoBackPressed }) => {
                 )}
               >
                 <p className="inner-text inner-text-left">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
-                  delectus cupiditate. Assumenda nesciunt, quaerat animi
-                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
-                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
-                  quisquam incidunt repellendus voluptatem, ea facere
-                  temporibus, error obcaecati et illo?
-                  {/* Cinq années après le lycée on se retrouve un été à Brétigny,
-                  pour ne plus jamais se quitter : j’ai rapidement ma mutation
-                  pour qu’on puisse s’installer ensemble, entre-temps on se
-                  pacse, on achète un appart qu’on retape totalement avec les
-                  parents de Lucas (Nadia et Fred, MERCI!) et maintenant on se
-                  marie ! */}
+                  Ben et Gaël rejoignent Lucas à Bordeaux où ils feront une
+                  coloc pendant 4 ans. Ils seront d'ailleurs les témoins de nos
+                  premiers moments de retrouvailles (j'ai beaucoup squatté chez
+                  eux). Oui parcequ'avec Lucas, on s'est retrouvés en 2017 pour
+                  tomber fous amoureux l'un de l'autre. On arrive sur la fin de
+                  nos études, moi je vais devenir prof et donc un choix s'impose
+                  à nous : vivre à Paris ou à Bordeaux. On choisit le pays du
+                  vin et dans la foulée on se pacse, parce qu'on est super
+                  amoureux (même si en vrai on le fait surtout pour que je
+                  puisse être mutée rapidement dans la région bordelaise) !
                 </p>
               </Plx>
               <Plx
@@ -230,20 +216,21 @@ const StoryTime = ({ onGoBackPressed }) => {
                 }}
                 parallaxData={translateXParallax(
                   screenWidth > 600 ? screenWidth * 0.15 : screenWidth * 0.8,
-                  screenWidth > 600 ? 50 : screenWidth * 0.1,
-                  screenWidth > 600 ? 1700 : 2600,
-                  screenWidth > 600 ? 2700 : 3800
+                  screenWidth > 600 ? 50 : screenWidth * 0.15,
+                  screenWidth > 600 ? 1700 : 2900,
+                  screenWidth > 600 ? 2900 : 4200
                 )}
               >
                 <p className="inner-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum optio facilis sunt ducimus in eos corrupti? Et itaque
-                  delectus cupiditate. Assumenda nesciunt, quaerat animi
-                  repudiandae quod tempora! Eveniet, repellat ipsum! Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Ipsum, pariatur
-                  nesciunt quas eaque dicta illum aut dolorem magni perspiciatis
-                  quisquam incidunt repellendus voluptatem, ea facere
-                  temporibus, error obcaecati et illo?
+                  Après quelques mois de vie à deux (dans l'appart des
+                  ex-colocs) on se décide sur un coup de tête à acheter. On
+                  trouve très rapidement l'appart de nos rêves. Pendant un peu
+                  plus de 8 mois on passe notre temps libre à retaper notre
+                  futur chez-nous avec l'aide de Fred et Nadia (les parents de
+                  Lucas) sans lesquels jamais on n'aurait pu se lancer dans ce
+                  projet (Merci !). Voilà, maintenant on est installés, on a un
+                  petit chat-Kira, l'appart est (quasi) terminé et on va se
+                  marier !
                 </p>
               </Plx>
             </div>
@@ -273,34 +260,21 @@ const StoryTime = ({ onGoBackPressed }) => {
                   }}
                   parallaxData={backgroundTranslation()}
                 />
-                <Plx
+                <div
                   style={{
                     width: "80%",
                     display: "flex",
+                    zIndex: 999,
                   }}
-                  parallaxData={[
-                    {
-                      start: 1500,
-                      end: 2800,
-                      properties: [
-                        {
-                          startValue: 0,
-                          endValue: 1,
-                          property: "opacity",
-                        },
-                      ],
-                    },
-                  ]}
                 >
                   <div className="text-on-img-container">
                     <p className="text-on-img">
-                      Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
-                      adipisicing elit. Eligendi magnam sapiente provident odit
-                      voluptates sunt, nesciunt iste nostrum quod laudantium quo
-                      a adipisci sint, atque velit autem cumque rem distinctio!
+                      On vous partage quelques photos issues de la séance qu'a
+                      bien voulu réaliser Gaël. Merci à lui et à Aurélia qui les
+                      a retouché, coeur sur vous !
                     </p>
                   </div>
-                </Plx>
+                </div>
               </div>
             )}
 
@@ -385,10 +359,9 @@ const StoryTime = ({ onGoBackPressed }) => {
 
             {screenWidth <= 900 && (
               <p className="text-on-img text-on-img-mobile">
-                Olivia & Lucas Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Eligendi magnam sapiente provident odit
-                voluptates sunt, nesciunt iste nostrum quod laudantium quo a
-                adipisci sint, atque velit autem cumque rem distinctio!
+                On vous partage quelques photos issues de la séance qu'a bien
+                voulu réaliser Gaël. Merci à lui et à Aurélia qui les a
+                retouché, coeur sur vous !
               </p>
             )}
 
@@ -416,7 +389,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   background: `linear-gradient(to top,  rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%)`,
                 }}
               />
-              <p className="endingText">On est pressé de vous voir ...</p>
+              <p className="endingText">On a hâte de vous retrouver ...</p>
             </div>
           </div>
         </div>

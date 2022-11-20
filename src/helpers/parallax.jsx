@@ -50,11 +50,11 @@ export const blurParallax = () => {
 export const backgroundTranslation = () => {
   return [
     {
-      start: 1500,
-      end: 3800,
+      start: 2000,
+      end: 5000,
       properties: [
         {
-          startValue: -450,
+          startValue: -400,
           endValue: 0,
           property: "translateY",
         },

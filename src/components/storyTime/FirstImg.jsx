@@ -42,7 +42,7 @@ export default function App() {
         }}
       >
         <p className="story-name">Olivia & Lucas</p>
-        <p className="story-title">notre histoire ...</p>
+        <p className="story-title">Notre histoire ...</p>
       </Plx>
     </div>
   );

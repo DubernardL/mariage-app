@@ -20,7 +20,7 @@ export const addGuest =
         payload
       )
     ).then((res) => {
-      toast && useToast("Vous êtes bien enregistrez");
+      toast && useToast("Vous êtes bien enregistré.e.s");
       return res;
     });
 
