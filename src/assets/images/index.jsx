@@ -3,6 +3,8 @@ export { default as burgerMenu } from "./burger-menu.svg";
 export { default as deleteTrash } from "./delete-trash.svg";
 export { default as flowerImg1 } from "./flower-img-1.svg";
 export { default as flowerImg2 } from "./flower-img-2.svg";
+export { default as backArrow } from "./back-arrow.png";
+export { default as closeIcon } from "./close-icon.png";
 
 export const homeImg = require("./photos/home_img_1.jpeg");
 export const venuImg = require("./photos/photo_1.jpeg");

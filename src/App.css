@@ -64,9 +64,8 @@ p {
 
 .info-text {
   font-family: "Title-font";
-  font-size: 22px;
-  line-height: 28px;
-  letter-spacing: 1px;
+  font-size: 20px;
+  line-height: 24px;
   text-align: justify;
   margin: 0;
 }
@@ -556,8 +555,9 @@ tfoot {
 
 .story-text-intro {
   color: white;
-  font-size: 32px;
-  line-height: 40px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
   text-align: center;
   margin: 0 25%;
 }
@@ -593,10 +593,11 @@ tfoot {
 .inner-text {
   font-family: "Title-font";
   color: white;
-  text-align: left;
+  text-align: justify;
   width: 70%;
-  font-size: 24px;
-  line-height: 30px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 36px;
 }
 
 .inner-text-left {
@@ -605,7 +606,7 @@ tfoot {
 
 .endingText {
   font-family: "Great Vibes", cursive;
-  color: #fce6ed;
+  color: white;
   margin: 0px;
   font-size: 90px;
   margin-top: 50px;
@@ -625,7 +626,8 @@ tfoot {
 
 .text-on-img {
   color: white;
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: bold;
   text-align: left;
   padding: 10px 20px;
   background: linear-gradient(
@@ -873,9 +875,8 @@ tfoot {
 
   .inner-text {
     color: white;
-    text-align: left;
     width: 70%;
-    font-size: 22;
+    font-size: 22px;
     line-height: 30px;
     margin: 30px 0;
     text-align: justify;
@@ -919,9 +920,8 @@ tfoot {
   /* Story END */
 
   .info-text {
-    font-size: 20px;
-    line-height: 26px;
-    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   /* CAROUSEL START */
@@ -1031,7 +1031,7 @@ tfoot {
   }
 
   .info-text {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
