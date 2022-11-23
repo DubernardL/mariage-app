@@ -125,14 +125,14 @@ const StoryTime = ({ onGoBackPressed }) => {
               >
                 <p className="inner-text">
                   Avec Lucas on s'est rencontrés en 1ère au Lycée Jean-Pierre
-                  Timbaud à Brétigny-sur-Orge (sisi 91 RPZ!) en 2010. On est
-                  très vite devenus amis au point de faire notre TPE (travail de
+                  Timbaud à Brétigny-sur-Orge (91 RPZ!) en 2010. On est très
+                  vite devenus amis au point de faire notre TPE (travail de
                   groupe à faire pour le bac) ensemble avec Amandine. C'est moi
                   qui ai choisi le sujet : "les gueules cassées" (Lucas m'en
-                  veut encore pour ce choix. D'ailleurs il a rien foutu c'est ma
-                  mère qui a fait tout le boulot). Bref, nous avons passés notre
-                  1ère et notre Terminale ensemble. A la fin du lycée Lucas
-                  déménage à Bordeaux pour suivre ses parents et faire ses
+                  veut encore pour ce choix. D'ailleurs il n'a rien foutu c'est
+                  ma mère qui a fait tout le boulot). Bref, nous avons passés
+                  notre première et notre Terminale ensemble. A la fin du lycée
+                  Lucas déménage à Bordeaux pour suivre ses parents et faire ses
                   études. Là on se perd de vue pendant quelques années.
                 </p>
               </Plx>
@@ -156,7 +156,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   Ben et Gaël rejoignent Lucas à Bordeaux où ils feront une
                   coloc pendant 4 ans. Ils seront d'ailleurs les témoins de nos
                   premiers moments de retrouvailles (j'ai beaucoup squatté chez
-                  eux). Oui parcequ'avec Lucas, on s'est retrouvés en 2017 pour
+                  eux). Oui car avec Lucas, on s'est retrouvés en 2017 pour
                   tomber fous amoureux l'un de l'autre. On arrive sur la fin de
                   nos études, moi je vais devenir prof et donc un choix s'impose
                   à nous : vivre à Paris ou à Bordeaux. On choisit le pays du
@@ -271,7 +271,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                     <p className="text-on-img">
                       On vous partage quelques photos issues de la séance qu'a
                       bien voulu réaliser Gaël. Merci à lui et à Aurélia qui les
-                      a retouché, coeur sur vous !
+                      a retouchées, coeur sur vous !
                     </p>
                   </div>
                 </div>
@@ -361,7 +361,7 @@ const StoryTime = ({ onGoBackPressed }) => {
               <p className="text-on-img text-on-img-mobile">
                 On vous partage quelques photos issues de la séance qu'a bien
                 voulu réaliser Gaël. Merci à lui et à Aurélia qui les a
-                retouché, coeur sur vous !
+                retouchées, coeur sur vous !
               </p>
             )}
 
@@ -375,6 +375,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                 src={bye}
                 style={{
                   width: "100%",
+                  marginBottom: 0,
                 }}
                 alt={"bye"}
               />

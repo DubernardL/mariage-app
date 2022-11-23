@@ -20,23 +20,13 @@ export const addGuest =
         payload
       )
     ).then((res) => {
-      toast && useToast("Vous êtes bien enregistré.e.s");
+      toast &&
+        setTimeout(() => useToast("Vous êtes bien enregistré.e.s"), 1500);
       return res;
     });
 
     return data;
   };
-
-// export const getGuest = (id) => async (dispatch) => {
-//   const data = await dispatch(
-//     fetchApi(`${process.env.REACT_APP_API_BASE_URL}api/v1/guests/${id}/`)
-//   ).then((res) => {
-//     dispatch(updateGuestStore(res));
-//     return res;
-//   });
-
-//   return data;
-// };
 
 export const updateGuest =
   (payload, toast = true) =>
@@ -48,7 +38,7 @@ export const updateGuest =
         payload
       )
     ).then((res) => {
-      toast && useToast("Modifications enregistrées");
+      toast && setTimeout(() => useToast("Modifications enregistrées"), 1500);
       return res;
     });
 
@@ -75,7 +65,7 @@ export const checkEmail =
       )
     ).then((res) => {
       if (res.length > 0) {
-        toast && useToast("On vous a retrouvé !");
+        toast && useToast("On vous a retrouvé.e.s !");
         const guest = res.find((r) => !r.fromEmailGuest);
         guest && dispatch(updateGuestStore(guest));
       }
