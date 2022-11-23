@@ -66,7 +66,14 @@ const GuestsList = ({ activeTab }) => {
           });
         }
       } else {
-        dispatch(addGuest(guestFromStore));
+        dispatch(addGuest(guestFromStore)).then((data) => {
+          dispatch(
+            updateGuestStore({
+              ...guestFromStore,
+              id: data.id,
+            })
+          );
+        });
         if (guestsFromGuestReducer.length > 0) {
           guestsFromGuestReducer.forEach((g) => {
             g.id && dispatch(updateGuest(g, false));

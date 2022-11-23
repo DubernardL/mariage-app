@@ -227,7 +227,7 @@ const StoryTime = ({ onGoBackPressed }) => {
                   trouve très rapidement l'appart de nos rêves. Pendant un peu
                   plus de 8 mois on passe notre temps libre à retaper notre
                   futur chez-nous avec l'aide de Fred et Nadia (les parents de
-                  Lucas) sans lesquels jamais on n'aurait pu se lancer dans ce
+                  Lucas) sans lesquels nous n'aurions pas pu nous lancer dans ce
                   projet (Merci !). Voilà, maintenant on est installés, on a un
                   petit chat-Kira, l'appart est (quasi) terminé et on va se
                   marier !
