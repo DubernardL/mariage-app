@@ -18,10 +18,15 @@ body,
   margin: 0;
   padding: 0;
   height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* hide scrollbar for chrome, safari and opera */
 .undisplay-scroll::-webkit-scrollbar {
+  display: none;
+}
+html::-webkit-scrollbar {
   display: none;
 }
 
@@ -343,20 +348,26 @@ input {
   align-self: center;
 }
 
+.formBtnContainer {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+
 .submit-btn {
   margin: 0 8px;
   font-family: "Title-font";
   font-size: 18px;
-  padding: 8px 16px;
+  padding: 16px 20px;
   background-color: #c32f5d;
   border-radius: 10px;
-  border: 4px solid #c32f5d;
+  border: none;
   color: #fce6ed;
 }
 
 .inverse {
   background-color: white;
-  border: 4px solid white;
+  border: none;
   color: #c32f5d;
 }
 
@@ -930,6 +941,13 @@ tfoot {
     padding-right: 2px;
   }
   /* CAROUSEL END */
+
+  .formBtnContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */

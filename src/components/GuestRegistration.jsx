@@ -19,11 +19,15 @@ import { deleteTrash, addGuestIcon, flowerImg1 } from "../assets/images";
 import { getGuestPrice } from "../helpers/price";
 import Alert from "./Alert";
 
+import Lottie from "react-lottie-player";
+import btnLottieLoader from "../assets/lotties/btnLottieLoader.json";
+
 const GuestsList = ({ activeTab }) => {
   const dispatch = useDispatch();
   const guestFromStore = useSelector(getGuest);
   const guestsFromGuestReducer = useSelector(getConsultationFields);
   const [infosIsPresent, setInfosIsPresent] = useState(true);
+  const [isBtnLoading, setBtnLoading] = useState(false);
 
   useEffect(() => {
     const newPrice = getGuestPrice();
@@ -53,6 +57,7 @@ const GuestsList = ({ activeTab }) => {
 
   const handleSubmit = (event) => {
     dispatch(checkEmail(guestFromStore.email, false)).then(() => {
+      setBtnLoading(true);
       if (guestFromStore.id) {
         dispatch(updateGuest(guestFromStore));
         if (guestsFromGuestReducer.length > 0) {
@@ -720,28 +725,43 @@ const GuestsList = ({ activeTab }) => {
             )}
             <div className="form-btn-container">
               {submitBtnDisplay() && guestFromStore.isPresent && (
-                <button
-                  type="button"
-                  className="submit-btn inverse"
-                  onClick={handleAddGuest}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    style={{ width: 25, height: 25, marginRight: 8 }}
-                    src={addGuestIcon}
-                    alt="add-guest-icon"
-                  />
-                  Ajouter un invité
-                </button>
+                <div className="formBtnContainer">
+                  <button
+                    type="button"
+                    className="submit-btn inverse"
+                    onClick={handleAddGuest}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      style={{ width: 20, height: 20, marginRight: 8 }}
+                      src={addGuestIcon}
+                      alt="add-guest-icon"
+                    />
+                    Ajouter un invité
+                  </button>
+                </div>
               )}
               {submitBtnDisplay() && (
-                <button className="submit-btn" type="submit">
-                  Enregistrer mes infos
-                </button>
+                <div className="formBtnContainer">
+                  {!isBtnLoading ? (
+                    <button className="submit-btn" type="submit">
+                      Enregistrer mes infos
+                    </button>
+                  ) : (
+                    <Lottie
+                      animationData={btnLottieLoader}
+                      play
+                      loop={false}
+                      onComplete={() => {
+                        setBtnLoading(false);
+                      }}
+                    />
+                  )}
+                </div>
               )}
             </div>
           </>
