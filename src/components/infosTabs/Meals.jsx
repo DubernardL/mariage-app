@@ -14,24 +14,29 @@ const Meals = () => {
             <br />
             N.B : Vous pourrez indiquer si vous souhaitez manger sur le domaine
             le temps de votre présence lorsque vous répondrez à l’invitation.
-            <br />
-            <br />
-            <br />
-            <p
-              style={{ fontSize: 26, textAlign: "center", fontStyle: "italic" }}
-            >
-              Menus à venir ...
-            </p>
           </p>
-          {/* <img src={photoBedroom} className="side-img" alt="venue-1" /> */}
         </div>
-        <div className="text-side-img img-first">
-          {/* <img
-            className="left-side side-img"
-            src={photoDortoires}
-            alt="venue-1"
-          /> */}
-          {/* <p className="text-side"></p> */}
+        <div className="menu-container">
+          <div className="meals-container">
+            <p className="meals-day">Vendredi soir</p>
+            <p className="meals">Paëlla</p>
+            <p className="meals">*</p>
+            <p className="meals">Salade de fruits</p>
+          </div>
+          <div className="meals-container">
+            <p className="meals-day">Samedi midi</p>
+            <p className="meals">
+              Melon, salade de pâtes au pesto, jambon de pays
+            </p>
+            <p className="meals">*</p>
+            <p className="meals">Rôti de boeuf froid et terrine de légumes</p>
+            <p className="meals">*</p>
+            <p className="meals">Tarte aux pommes</p>
+          </div>
+          <div className="meals-container">
+            <p className="meals-day">Dimanche soir</p>
+            <p className="meals">Couscous royal</p>
+          </div>
         </div>
       </div>
     </div>
